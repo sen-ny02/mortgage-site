@@ -88,3 +88,57 @@ p {
   padding: 0.6rem 1.1rem;
   border-radius: 4px;
 }
+
+.hero {
+  background: #f4f1ea;
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b6355;
+  margin-block: 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  margin-block: 0 1rem;
+  max-width: 15ch;
+}
+
+.lede {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  max-width: 55ch;
+  margin-block: 0 2rem;
+  color: #3d3a34;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #1a3a2e;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #1a3a2e;
+  border: 1px solid #1a3a2e;
+}
