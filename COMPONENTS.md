@@ -1,3 +1,6 @@
+
+**New to this?** Read `BUILDING-A-PAGE.md` first — it explains how to work out which components you need. This file is the reference for what each one is.
+
 # Components
 
 **Read the first half before you start building. It explains how this
