@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  PAGE TEMPLATE — copy this file to start a new page.
+
+  HOW TO USE:
+    1. Copy this file and rename it (about.html, services.html, etc.)
+    2. Change the <title> and <meta name="description">
+    3. Change the css/PAGENAME.css link to match your page
+    4. Add aria-current="page" to your page's link in the nav
+    5. Write your content inside <main>
+
+  DO NOT change the header or footer markup. They are the same on every
+  page — if they need changing, tell Sen so it gets changed everywhere at
+  once.
+  ============================================================================
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CHANGE THIS. Shows in the browser tab and as the headline in Google
+       results. Format: Page name | Business name -->
+  <title>Page name | Cambridge Mortgage Bureau</title>
+
+  <!-- CHANGE THIS. The grey summary text under the link in Google results.
+       Aim for 140-155 characters. -->
+  <meta name="description" content="Whole-of-market mortgage and equity release advice from Cambridge, serving clients across the UK.">
+
+  <!-- Shared styles first, then page-specific styles. Order matters:
+       later rules win when specificity is equal, so your page CSS can
+       override the shared defaults if it needs to. -->
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/PAGENAME.css">
+</head>
+
+<body>
+
+  <!-- Lets keyboard users jump past the nav. Hidden until focused. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ==========================================================================
+       SITE HEADER — identical on every page. Do not edit.
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container">
+
+      <a class="site-logo" href="index.html">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
+
+      <!-- aria-label distinguishes this from the footer nav for screen
+           readers. Links are in a <ul> so screen readers announce how many
+           items there are before reading them. -->
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- tel: link makes the number tappable on mobile. Keep the href in
+           full international format (+44, no leading zero) and the visible
+           text in readable format.
+           TODO: replace with the real number when confirmed. -->
+      <a class="btn btn-primary" href="tel:+441234567890">01234 567890</a>
+
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       PAGE CONTENT — this is the part you write.
+       id="main" is the target of the skip link above.
+       ========================================================================== -->
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Eyebrow label</p>
+        <h1>Page heading</h1>
+        <p>Your content goes here.</p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       SITE FOOTER — identical on every page. Do not edit.
+
+       The regulatory text below is PLACEHOLDER wording. Flexi Network have
+       to supply the exact required text before this site goes live.
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>Cambridge Mortgage Bureau</h3>
+          <p>Whole-of-market mortgage and equity release advice.</p>
+        </div>
+
+        <div>
+          <h3>Pages</h3>
+          <nav aria-label="Footer">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+441234567890">01234 567890</a></li>
+            <li><a href="mailto:TODO@example.com">TODO@example.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="cookies.html">Cookie policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-legal">
+
+        <!-- MANDATORY. This warning is required on mortgage promotions.
+             Exact wording to be confirmed by Flexi Network. -->
+        <p class="footer-warning">
+          Your home may be repossessed if you do not keep up repayments on your mortgage.
+        </p>
+
+        <!-- TODO: Flexi Network to confirm exact required wording, and
+             whether the FCA number shown should be theirs, ours, or both. -->
+        <p>
+          Cambridge Mortgage Bureau Ltd is an Appointed Representative of
+          Flexi Network Ltd, which is authorised and regulated by the
+          Financial Conduct Authority. FCA number 948658.
+        </p>
+
+        <!-- TODO: company number pending from Companies House. -->
+        <p>
+          Cambridge Mortgage Bureau Ltd is registered in England and Wales.
+          Company number TODO. Registered address TODO.
+        </p>
+
+        <p>&copy; 2026 Cambridge Mortgage Bureau Ltd.</p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scroll reveal animation. Loaded last so it doesn't block rendering. -->
+  <script src="js/reveal.js"></script>
+
+</body>
+</html>
