@@ -108,9 +108,7 @@ to the shared file so everyone gets it.
 
 ## When you're stuck
 
-Message Sen after **20 minutes**. Not two hours. On a 13-day deadline,
-someone spending an evening stuck on something that takes two minutes to
-answer is the single most expensive thing that can happen.
+Message Sen after **20 minutes**. Not two hours. 
 
 ---
 
