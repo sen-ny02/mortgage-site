@@ -476,6 +476,454 @@ select:focus-visible {
 
 
 /* ==========================================================================
+   SHARED COMPONENTS
+   ==========================================================================
+
+   Append this to the bottom of css/shared.css, BEFORE section 7 (Motion).
+   Motion must stay last in the file.
+
+   Everything here is a reusable pattern. See COMPONENTS.md for the HTML
+   that goes with each one — do not guess the markup, copy it from there.
+
+   CONTENTS:
+     A. Buttons
+     B. Cards and card grids
+     C. Layout utilities
+     D. Prose blocks
+     E. Pill lists
+     F. Forms
+     G. Call-to-action band
+   ========================================================================== */
+
+
+/* ==========================================================================
+   A. BUTTONS
+   ==========================================================================
+   Two classes go on every button:  class="btn btn-primary"
+
+   .btn holds everything both variants share (padding, shape, font).
+   .btn-primary / .btn-secondary hold only the colours that differ.
+
+   Why split: change the padding on every button on the site by editing
+   one rule instead of two.
+
+   Use .btn-primary for the ONE main action on a page. Use .btn-secondary
+   for anything alongside it. Two equally loud buttons means the visitor
+   doesn't know which to press.
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-base);
+  text-align: center;
+  cursor: pointer;
+  /* Only animate transform and colours. Animating width/height/margin
+     forces the browser to recalculate the page layout every frame, which
+     stutters on slower devices. */
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.btn-primary {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-brand-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.btn-secondary:hover {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* Pressed state. Returns the button to its resting position so the click
+   feels physical. */
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Wrapper for two or more buttons side by side. Wraps to a second line
+   on narrow screens automatically. */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+
+/* ==========================================================================
+   B. CARDS AND CARD GRIDS
+   ==========================================================================
+   .card-grid automatically fits as many columns as will comfortably fit,
+   then reflows to fewer as the screen narrows. No media queries needed.
+   ========================================================================== */
+
+.card-grid {
+  display: grid;
+  /* Read this inside out:
+       minmax(280px, 1fr) — each column is at least 280px wide, and at most
+         one equal share of the leftover space.
+       auto-fit — the browser works out how many columns fit, rather than
+         you specifying a number.
+     Result: 3 columns on desktop, 2 on tablet, 1 on phone, automatically.
+     To change how early it reflows, change the 280px. Bigger number means
+     fewer columns. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  /* Card grids are usually <ul> elements, so clear the list defaults. */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variant: wider minimum, so fewer and larger columns. */
+.card-grid-wide {
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+}
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition: border-color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.card h3 {
+  font-size: var(--text-h4);
+  margin-block-end: var(--space-xs);
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-block-end: 0;
+}
+
+/* Only lift cards that are clickable. A card that moves on hover but does
+   nothing when clicked is confusing. */
+.card-link:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-3px);
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ==========================================================================
+   C. LAYOUT UTILITIES
+   ==========================================================================
+   Add these to a .container to change how its children are arranged.
+   They all stack to a single column on narrow screens.
+   ========================================================================== */
+
+/* .split — two columns, the second wider than the first.
+   Used for image-beside-text sections.
+   Expects exactly TWO direct children. */
+.split {
+  display: grid;
+  gap: var(--space-xl);
+  /* No grid-template-columns here. Grid defaults to one column, which is
+     the mobile layout. The two-column version is added below at 800px.
+     This is "mobile first": write the simple version as the base, then
+     ADD complexity for wider screens. */
+  align-items: start;
+}
+
+/* .split-even — same but two equal columns. */
+.split-even {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+/* .split-reverse — puts the FIRST child on the right at desktop width.
+   Useful for alternating image sides down a page. On mobile it still
+   stacks in source order, which keeps it readable. */
+
+@media (min-width: 800px) {
+
+  .split {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .split-even {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .split-reverse > *:first-child {
+    order: 2;
+  }
+}
+
+/* Note on minmax(0, 1fr) rather than plain 1fr:
+   a grid column sized 1fr won't shrink below the width of its widest
+   content by default, which lets long words or images push the column
+   wider than the container. minmax(0, 1fr) allows it to shrink. */
+
+
+/* ==========================================================================
+   D. PROSE BLOCKS
+   ==========================================================================
+   For pages that are mostly text — privacy policy, cookie policy, terms.
+
+   Wrap the body text in <div class="prose"> and headings, paragraphs and
+   lists inside it get sensible spacing automatically. You should not need
+   to write any CSS for those pages.
+   ========================================================================== */
+
+.prose {
+  max-width: var(--measure);
+}
+
+/* Headings after the first get extra space above them, so sections
+   separate visually. The :first-child exception stops a gap appearing at
+   the very top of the block. */
+.prose h2 {
+  margin-block-start: var(--space-2xl);
+}
+
+.prose h3 {
+  margin-block-start: var(--space-xl);
+}
+
+.prose h2:first-child,
+.prose h3:first-child {
+  margin-block-start: 0;
+}
+
+.prose ul,
+.prose ol {
+  margin-block: 0 var(--space-md);
+  padding-inline-start: var(--space-lg);
+}
+
+.prose li {
+  margin-block-end: var(--space-xs);
+}
+
+/* Last-updated line at the top of a policy page. */
+.prose-meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-block-end: var(--space-xl);
+}
+
+
+/* ==========================================================================
+   E. PILL LISTS
+   ==========================================================================
+   Small rounded labels in a row. Used for qualifications, tags, or short
+   feature lists. Wraps automatically.
+   ========================================================================== */
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pill-list li {
+  background: var(--color-brand-tint);
+  color: var(--color-brand);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  /* Large radius makes a pill shape. Only use this large a value when you
+     actually mean a pill — everything else uses --radius-sm or -md. */
+  border-radius: 999px;
+}
+
+
+/* ==========================================================================
+   F. FORMS
+   ==========================================================================
+   Used on the contact page. Styled here so that if any other page ever
+   needs a form, it matches.
+
+   Every input MUST have a <label> with a matching for="" and id="".
+   Placeholder text is not a label — it disappears when the user types and
+   screen readers may not read it.
+   ========================================================================== */
+
+.form-field {
+  margin-block-end: var(--space-lg);
+}
+
+.form-field label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-block-end: var(--space-xs);
+}
+
+/* Small grey hint under a label. Link it to the input with
+   aria-describedby so screen readers read it too. */
+.form-hint {
+  display: block;
+  font-weight: 400;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-block-end: var(--space-xs);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition: border-color var(--transition-fast);
+}
+
+.form-field input:hover,
+.form-field textarea:hover,
+.form-field select:hover {
+  border-color: var(--color-text-muted);
+}
+
+.form-field textarea {
+  min-height: 8rem;
+  /* Let users drag it taller but not wider — horizontal resizing breaks
+     the layout. */
+  resize: vertical;
+}
+
+/* Error state. Add class="has-error" to the .form-field wrapper. */
+.form-field.has-error input,
+.form-field.has-error textarea {
+  border-color: var(--color-error);
+}
+
+/* Error message. Sits under the input.
+   Give it role="alert" in the HTML so screen readers announce it when it
+   appears. */
+.form-error {
+  display: block;
+  color: var(--color-error);
+  font-size: var(--text-sm);
+  margin-block-start: var(--space-xs);
+}
+
+/* Success and failure messages shown after submitting. */
+.form-message {
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  margin-block-end: var(--space-lg);
+}
+
+.form-message-success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.form-message-error {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+/* Consent checkbox row. The checkbox needs to sit beside its label rather
+   than above it, so it overrides the block layout used elsewhere. */
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-block-end: var(--space-lg);
+}
+
+.form-consent input {
+  width: auto;
+  /* Nudges the checkbox down to line up with the first line of text. */
+  margin-block-start: 0.3rem;
+  flex-shrink: 0;
+}
+
+.form-consent label {
+  font-weight: 400;
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   G. CALL-TO-ACTION BAND
+   ==========================================================================
+   Full-width tinted strip with a heading and a button. Use at the bottom
+   of a page to push the visitor towards contacting.
+
+   One per page maximum. More than that and it stops reading as important.
+   ========================================================================== */
+
+.cta-band {
+  background: var(--color-brand);
+  color: #fff;
+  padding-block: var(--space-2xl);
+  text-align: center;
+}
+
+.cta-band h2 {
+  color: #fff;
+  /* Centred text needs a max-width and auto margins, or it stretches the
+     full container width and becomes hard to read. */
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.cta-band p {
+  color: #fff;
+  max-width: 50ch;
+  margin-inline: auto;
+  margin-block-end: var(--space-lg);
+  /* Slightly transparent so it sits below the heading in the visual
+     hierarchy without needing a second colour variable. */
+  opacity: 0.9;
+}
+
+/* Button on the dark band. White background, brand-coloured text. */
+.cta-band .btn-primary {
+  background: #fff;
+  color: var(--color-brand);
+}
+
+.cta-band .btn-primary:hover {
+  background: var(--color-brand-tint);
+  color: var(--color-brand);
+}
+
+/* Centres the button group inside the band. */
+.cta-band .btn-group {
+  justify-content: center;
+}
+
+
+
+/* ==========================================================================
    7. MOTION
    ==========================================================================
    Keep this section LAST in the file. The reduced-motion block at the
