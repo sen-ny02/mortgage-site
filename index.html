@@ -2,73 +2,244 @@
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Cambridge Mortgage Bureau | Whole-of-Market Mortgage Adviser</title>
-    <meta name="description" content="Independent, whole-of-market mortgage and equity release advice from Cambridge. First-time buyers, remortgages, buy-to-let and commercial lending across the UK.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Independent, whole-of-market mortgage and equity release advice from Cambridge. First-time buyers, remortgages, buy-to-let and commercial lending across the UK.">
+
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
-    <header class="site-header">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ==========================================================================
+       SITE HEADER — identical on every page. Do not edit here; if it needs
+       changing it has to change in all six files at once.
+       ========================================================================== -->
+  <header class="site-header">
     <div class="container">
-        <a class="logo" href="/">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
 
-        <nav class="site-nav" aria-label="Main">
+      <a class="site-logo" href="index.html">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
+
+      <nav class="site-nav" aria-label="Main">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        </nav>
+      </nav>
 
-        <a class="phone" href="tel:+441234567890">01234 567890</a> <!-- change number when confirmed -->
+      <!-- TODO: replace with the real number when confirmed. -->
+      <a class="btn btn-primary" href="tel:+441234567890">01234 567890</a>
+
     </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="container">
-                <p class="eyebrow">Whole-of-market · Cambridge · UK-wide</p>
-                <h1>Mortgage advice without the jargon</h1>
-                <p class="lede">Over twenty years' experience across residential, buy-to-let, commercial and equity release. Clear options, honest costs, and no pressure to decide before you're ready.</p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#contact">Book a free chat</a>
-                    <a class="btn btn-secondary" href="#services">What I can help with</a>
-                </div>
-            </div>
-        </section>
-        <section class="services" id="services">
-        <div class="container">
-            <h2>What I can help with</h2>
-            <p class="section-intro">Whole-of-market advice across residential and commercial lending.</p>
+  </header>
 
-            <ul class="card-grid">
-            <li class="card">
-                <h3>First-time buyers</h3>
-                <p>Working out what you can borrow, what deposit you need, and which lenders will consider your situation.</p>
-            </li>
-            <li class="card">
-                <h3>Remortgaging</h3>
-                <p>Reviewing your current deal before it ends, and comparing product transfers against moving lender.</p>
-            </li>
-            <li class="card">
-                <h3>Buy-to-let</h3>
-                <p>Advice for landlords, including portfolio lending and limited company structures.</p>
-            </li>
-            <li class="card">
-                <h3>Commercial lending</h3>
-                <p>Finance for business premises and commercial investment property.</p>
-            </li>
-            <li class="card">
-                <h3>Equity release</h3>
-                <p>Later-life lending options, and an honest assessment of whether it's right for you.</p>
-            </li>
-            <li class="card">
-                <h3>Protection</h3>
-                <p>Life cover, critical illness and income protection to sit alongside your mortgage.</p>
-            </li>
-            </ul>
+
+  <main id="main">
+
+    <!-- ========================================================================
+         HERO — the only custom-styled block on this page. Styles in home.css.
+         No .reveal here: the first thing a visitor sees must appear instantly.
+         ======================================================================== -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Whole-of-market · Cambridge · UK-wide</p>
+        <h1>Mortgage advice without the jargon</h1>
+        <p class="lede">Over twenty years' experience across residential, buy-to-let, commercial and equity release. Clear options, honest costs, and no pressure to decide before you're ready.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="contact.html">Book a free chat</a>
+          <a class="btn btn-secondary" href="services.html">What I can help with</a>
         </div>
-        </section>
-        <section class="about" id="about">
-        </section>
-    </main>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         SERVICES SUMMARY — six cards, each linking to its section on the
+         services page. Full detail lives there, not here.
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>What I can help with</h2>
+          <p>Whole-of-market advice across residential and commercial lending.</p>
+        </div>
+
+        <ul class="card-grid">
+
+          <li class="reveal">
+            <a class="card card-link" href="services.html#first-time-buyers">
+              <h3>First-time buyers</h3>
+              <p>Working out what you can borrow, what deposit you need, and which lenders will consider your situation.</p>
+            </a>
+          </li>
+
+          <li class="reveal">
+            <a class="card card-link" href="services.html#remortgaging">
+              <h3>Remortgaging</h3>
+              <p>Reviewing your current deal before it ends, and comparing product transfers against moving lender.</p>
+            </a>
+          </li>
+
+          <li class="reveal">
+            <a class="card card-link" href="services.html#buy-to-let">
+              <h3>Buy-to-let</h3>
+              <p>Advice for landlords, including portfolio lending and limited company structures.</p>
+            </a>
+          </li>
+
+          <li class="reveal">
+            <a class="card card-link" href="services.html#commercial">
+              <h3>Commercial lending</h3>
+              <p>Finance for business premises and commercial investment property.</p>
+            </a>
+          </li>
+
+          <li class="reveal">
+            <a class="card card-link" href="services.html#equity-release">
+              <h3>Equity release</h3>
+              <p>Later-life lending options, and an honest assessment of whether it's right for you.</p>
+            </a>
+          </li>
+
+          <li class="reveal">
+            <a class="card card-link" href="services.html#protection">
+              <h3>Protection</h3>
+              <p>Life cover, critical illness and income protection to sit alongside your mortgage.</p>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         ABOUT TEASER — short version only. The full bio is on about.html.
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container split">
+
+        <div>
+          <!-- TODO: replace with the real photo of Sam. -->
+          <img src="https://placehold.co/800x1000" alt="Sam Makalandawa, mortgage and equity release adviser">
+        </div>
+
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Twenty years in financial services</h2>
+          <p>Sam has worked across development banking, auto finance and deposit mobilisation before specialising in mortgage and equity release advice. He is based in Cambridge and takes on clients across the UK.</p>
+          <p>As a whole-of-market adviser, he can recommend products from across the lending market rather than a restricted panel.</p>
+
+          <ul class="pill-list">
+            <li>CeMAP</li>
+            <li>CeRER</li>
+            <li>Whole of market</li>
+          </ul>
+
+          <p>
+            <a class="btn btn-secondary btn-secondary-sam" href="about.html">More about Sam</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         CALL TO ACTION — one per page maximum.
+         ======================================================================== -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Ready to talk it through?</h2>
+        <p>A first conversation costs nothing and there is no obligation.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="contact.html">Book a free chat</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       SITE FOOTER — identical on every page. Regulatory wording is placeholder
+       until Flexi Network confirm it.
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>Cambridge Mortgage Bureau</h3>
+          <p>Whole-of-market mortgage and equity release advice.</p>
+        </div>
+
+        <div>
+          <h3>Pages</h3>
+          <nav aria-label="Footer">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+441234567890">01234 567890</a></li>
+            <li><a href="mailto:TODO@example.com">TODO@example.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="cookies.html">Cookie policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-legal">
+
+        <p class="footer-warning">
+          Your home may be repossessed if you do not keep up repayments on your mortgage.
+        </p>
+
+        <!-- TODO: Flexi Network to confirm exact required wording. -->
+        <p>
+          Cambridge Mortgage Bureau Ltd is an Appointed Representative of
+          Flexi Network Ltd, which is authorised and regulated by the
+          Financial Conduct Authority. FCA number 948658.
+        </p>
+
+        <!-- TODO: company number pending from Companies House. -->
+        <p>
+          Cambridge Mortgage Bureau Ltd is registered in England and Wales.
+          Company number TODO. Registered address TODO.
+        </p>
+
+        <p>&copy; 2026 Cambridge Mortgage Bureau Ltd.</p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/reveal.js"></script>
+
 </body>
 </html>
