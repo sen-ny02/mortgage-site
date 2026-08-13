@@ -1,0 +1,35 @@
+/* ==========================================================================
+   HOME PAGE
+   ==========================================================================
+   Only the hero is styled here. Everything else on this page uses shared
+   components from css/shared.css.
+
+   If this file starts growing, something has gone wrong — check whether a
+   shared component already does what you're writing.
+   ========================================================================== */
+
+.hero {
+  background: var(--color-brand-tint);
+  /* Deeper than a standard section. The hero is the one place on the site
+     that gets extra vertical space. */
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.hero h1 {
+  /* Tighter than the site-wide default. A headline running the full 1100px
+     container looks wrong — you want it breaking across two or three lines. */
+  max-width: 15ch;
+}
+
+.hero .lede {
+  /* One step up from body text. Sits between the h1 and the rest of the
+     page in the visual hierarchy. */
+  font-size: var(--text-lg);
+  max-width: 55ch;
+  margin-block-end: var(--space-xl);
+  color: var(--color-text-muted);
+}
+
+.btn-secondary-sam{
+    margin-top: 30px;
+}
