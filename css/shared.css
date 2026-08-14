@@ -975,6 +975,15 @@ select:focus-visible {
 
    Do not put this on the h1 or anything above the fold — the first thing
    a visitor sees should be readable instantly. */
+
+   /* Smooth scrolling for in-page anchor links (e.g. the services page jump
+   links). scroll-padding-top stops the target heading landing underneath
+   a sticky header — adjust the value if the header height changes. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
