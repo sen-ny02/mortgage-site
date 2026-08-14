@@ -1,0 +1,17 @@
+/* css/about.css */
+
+/* Puts the "Qualifications" label on the same line as the pills.
+   flex-wrap means the pills drop below the label on narrow screens
+   rather than squashing. */
+.qualifications-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* The eyebrow has a bottom margin by default, which would push it out of
+   alignment with the pills. */
+.qualifications-row .eyebrow {
+  margin: 0;
+}
