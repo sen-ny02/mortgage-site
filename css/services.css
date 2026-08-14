@@ -1,0 +1,12 @@
+/* css/services.css */
+
+/* Narrower than the site default. The site container is 1100px, which is
+   right for grids and two-column layouts but leaves long text hugging the
+   left with half the page empty. */
+.service-section .container {
+  max-width: 760px;
+}
+
+.service-section {
+  border-block-start: 1px solid var(--color-border-strong);
+}
