@@ -678,6 +678,32 @@ select:focus-visible {
    They all stack to a single column on narrow screens.
    ========================================================================== */
 
+/* ==========================================================================
+   TESTIMONIALS
+   ==========================================================================
+   Use inside a .card-grid. The <blockquote> replaces the .card wrapper.
+   ========================================================================== */
+
+.quote {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-inline-start: 3px solid var(--color-sage);
+  padding-inline-start: var(--space-lg);
+}
+
+.quote p {
+  margin-block-end: var(--space-md);
+  color: var(--color-text);
+}
+
+.quote footer {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
 /* .split — two columns, the second wider than the first.
    Used for image-beside-text sections.
    Expects exactly TWO direct children. */
