@@ -1,10 +1,33 @@
-
-**New to this?** Read `BUILDING-A-PAGE.md` first — it explains how to work out which components you need. This file is the reference for what each one is.
-
 # Components
+
+> **New to this?** Read `BUILDING-A-PAGE.md` first — it explains how to work
+> out which components you need and what order to build in. This file is
+> the reference for what each one is.
 
 **Read the first half before you start building. It explains how this
 works. The second half is the reference you'll come back to.**
+
+---
+
+## Every class, in one list
+
+**You should not need to open `css/shared.css`.** This is everything that
+exists. If a class isn't on this list, it doesn't exist — ask Sen rather
+than searching for it.
+
+**Layout:** `container` · `section` · `section-alt` · `section-tint` ·
+`section-header` · `eyebrow` · `split` · `split-even` · `split-reverse` ·
+`prose` · `prose-meta`
+
+**Components:** `btn` · `btn-primary` · `btn-secondary` · `btn-group` ·
+`card-grid` · `card-grid-wide` · `card` · `card-link` · `quote` ·
+`pill-list` · `cta-band`
+
+**Forms:** `form-field` · `form-hint` · `form-error` · `form-message` ·
+`form-message-success` · `form-message-error` · `form-consent` ·
+`has-error`
+
+**Other:** `reveal` · `visually-hidden`
 
 ---
 
@@ -111,7 +134,9 @@ to the shared file so everyone gets it.
 
 ## When you're stuck
 
-Message Sen after **20 minutes**. Not two hours. 
+Message Sen after **20 minutes**. Not two hours. On a 13-day deadline,
+someone spending an evening stuck on something that takes two minutes to
+answer is the single most expensive thing that can happen.
 
 ---
 
@@ -233,6 +258,62 @@ columns. Use when the cards have more text in them.
 Note `card-link` goes on the `<a>`, not the `<li>`. Only use this when the
 card actually is clickable — a card that lifts on hover but does nothing
 when clicked is annoying.
+
+---
+
+## Testimonials
+
+A client quote. Sits inside a `card-grid` when you have more than one, so
+they lay out in columns and reflow on narrow screens.
+
+```html
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>What clients say</h2>
+    </div>
+
+    <div class="card-grid">
+
+      <blockquote class="quote">
+        <p>"Sam explained every option in plain English and made the whole
+           process feel far less stressful."</p>
+        <footer>First name, County</footer>
+      </blockquote>
+
+      <blockquote class="quote">
+        <p>"Helpful, responsive and clear about the costs."</p>
+        <footer>First name, County</footer>
+      </blockquote>
+
+    </div>
+
+  </div>
+</section>
+```
+
+`<blockquote>` rather than a div — it's a quotation, and screen readers
+announce it as one. The attribution goes in `<footer>`, which is the
+correct element inside a blockquote.
+
+No `.card` class needed. The `.quote` styling replaces it.
+
+**Do not use a background colour on the section holding these.** The quotes
+have their own left rule and sit on white.
+
+### Important — these are regulated
+
+Testimonials on a financial services site are a financial promotion, not
+decoration. Before any real quote goes live:
+
+- Flexi Network have to approve it
+- Nothing that implies a guaranteed outcome ("Sam got me a rate nobody else
+  could") — only how the service felt
+- Attribution is first name and county only
+- Never paste in screenshots of reviews
+
+Use placeholder text until Sen confirms which reviews are cleared.
 
 ---
 
@@ -432,7 +513,7 @@ input:
 
 ```html
 <p class="form-message form-message-error">
-  Something went wrong sending your message. Please call 07920 635771
+  Something went wrong sending your message. Please call 01234 567890
   instead.
 </p>
 ```
@@ -489,6 +570,7 @@ nothing does.
 | A grey or tinted section | Add `section-alt` or `section-tint` |
 | A heading with a subtitle | `<div class="section-header">` |
 | A row of boxes | `<ul class="card-grid">` + `<li class="card">` |
+| A client quote | `<blockquote class="quote">` |
 | Image beside text | `<div class="container split">` |
 | Two equal columns | `<div class="container split-even">` |
 | A button | `<a class="btn btn-primary">` |
