@@ -418,12 +418,48 @@ select:focus-visible {
 
 .footer-grid {
   display: grid;
-  /* auto-fit fits as many columns as will fit at 220px minimum, then
-     stretches them to fill. Reflows to fewer columns automatically on
-     narrow screens with no media query. */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* Single column on mobile. Widths are set at 768px below.
+     Not using auto-fit here: these four columns hold very different
+     amounts of content, so equal widths leave the email cramped and the
+     legal column half empty. Explicit ratios instead. */
   gap: var(--space-xl);
-  margin-block-end: var(--space-xl);
+  margin-block-end: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    /* Brand column widest, contact wide enough for the email address on
+       one line, pages and legal only as wide as their links need. */
+    grid-template-columns: 1.4fr 0.8fr 1.3fr 0.8fr;
+    gap: var(--space-2xl);
+  }
+}
+
+.footer-grid h3 {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  /* Tighter than the shared h3 default — column headings sit close to
+     the list they label. */
+  margin-block: 0 var(--space-md);
+}
+
+.footer-grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-grid li {
+  /* Was --space-xs, which crowded the links. */
+  margin-block-end: var(--space-sm);
+}
+
+.footer-grid p {
+  /* Stops the tagline running the full column width. */
+  max-width: 30ch;
+  color: var(--color-text-muted);
 }
 
 .footer-grid h3 {
@@ -939,6 +975,15 @@ select:focus-visible {
 
    Do not put this on the h1 or anything above the fold — the first thing
    a visitor sees should be readable instantly. */
+
+   /* Smooth scrolling for in-page anchor links (e.g. the services page jump
+   links). scroll-padding-top stops the target heading landing underneath
+   a sticky header — adjust the value if the header height changes. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
