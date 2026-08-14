@@ -42,25 +42,29 @@
    ========================================================================== */
 
 :root {
-
-  /* --- Brand colours ------------------------------------------------------
-     PLACEHOLDER VALUES. These will be replaced once we have the logo.
-     Names are deliberately semantic (--color-brand, not --color-green) so
-     that swapping the palette doesn't require renaming anything.
+/* --- Brand colours ------------------------------------------------------
+     From the Cambridge Mortgage Bureau brand sheet.
+     Note: the names on the brand sheet don't match the colours (their
+     "charcoal" is cream, their "stone" is black). Go by value, not name.
      ---------------------------------------------------------------------- */
 
-  --color-brand: #21453a;           /* Main brand colour. Buttons, headings. */
-  --color-brand-dark: #16302a;      /* Darker shade. Button hover states.    */
-  --color-brand-tint: #eef2f0;      /* Very pale brand tint. Section bgs.    */
+  --color-brand: #22382c;           /* Dark forest green. Logo, buttons, headings. */
+  --color-brand-dark: #172619;      /* Darker shade for button hover states.       */
+  --color-brand-tint: #f6f2ec;      /* Warm ivory. Section backgrounds.            */
+
+  --color-sage: #7d8f7b;            /* Muted sage. Borders, dividers, icons.
+                                       NOT for body text — see note below.         */
+  --color-gold: #cfb68d;            /* Warm tan. Thin accents only.
+                                       NOT for text or buttons — see note below.   */
 
   /* --- Neutrals ----------------------------------------------------------- */
 
-  --color-text: #1c1c1a;            /* Body text.                            */
-  --color-text-muted: #5d5c58;      /* Captions, secondary text.             */
-  --color-bg: #ffffff;              /* Page background.                      */
-  --color-bg-alt: #f7f6f3;          /* Alternate section background.         */
-  --color-border: #e0dedb;          /* Hairline borders, dividers.           */
-  --color-border-strong: #c4c1bc;   /* Emphasised borders, hover states.     */
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a5f58;      /* Slightly green-tinted grey, sits with the brand. */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f6f2ec;          /* Same warm ivory as the brand tint.          */
+  --color-border: #e3ddd2;          /* Warm hairline, tuned to the ivory.          */
+  --color-border-strong: #c3bba9;
 
   /* --- Status colours (used by form validation) ---------------------------- */
 
