@@ -1,0 +1,11 @@
+/* ==========================================================================
+   CONTACT PAGE
+   ==========================================================================
+   Almost everything here uses shared components. The only page-specific
+   rule stops the details column headings sitting too close to the text
+   above them.
+   ========================================================================== */
+
+.contact-details h3 {
+  margin-block-start: var(--space-xl);
+}

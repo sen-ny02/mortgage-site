@@ -32,7 +32,7 @@
        later rules win when specificity is equal, so your page CSS can
        override the shared defaults if it needs to. -->
   <link rel="stylesheet" href="css/shared.css">
-  <link rel="stylesheet" href="css/contact.css">
+  <!-- <link rel="stylesheet" href="css/PAGENAME.css"> -->
 </head>
 
 <body>
@@ -56,7 +56,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -76,127 +76,15 @@
        ========================================================================== -->
   <main id="main">
 
-  <section class="section section-alt">
-  <div class="container">
-    <div class="section-header">
-      <h1>Get in touch</h1>
-      <p>Tell me a bit about what you're looking for and I'll come back to you within one working day.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container split-even">
-
-    <!-- ====================================================================
-         CONTACT FORM
-
-         Netlify handles this. No JavaScript, no third-party service.
-         Three attributes make it work:
-           name="contact"       — the form name in the Netlify dashboard
-           data-netlify="true"  — tells Netlify to process this form
-           netlify-honeypot     — names the hidden anti-spam field
-
-         Submissions appear at: Netlify dashboard → Forms → contact
-         Email notifications are configured separately in Netlify.
-         ==================================================================== -->
-    <div>
-      <form name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/thanks.html">
-
-        <!-- Anti-spam honeypot. Hidden from real users, but bots fill in
-             every field they find. If this has a value, Netlify discards
-             the submission silently. Do not remove. -->
-        <p class="visually-hidden">
-          <label>Leave this field empty: <input name="bot-field"></label>
-        </p>
-
-        <div class="form-field">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-
-        <div class="form-field">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-
-        <div class="form-field">
-          <label for="phone">Phone number</label>
-          <span class="form-hint" id="phone-hint">Optional — if you'd rather I called you</span>
-          <input type="tel" id="phone" name="phone"
-                 autocomplete="tel" aria-describedby="phone-hint">
-        </div>
-
-        <div class="form-field">
-          <label for="enquiry">What are you looking for?</label>
-          <select id="enquiry" name="enquiry">
-            <option value="">Please choose</option>
-            <option>First-time buyer mortgage</option>
-            <option>Remortgage or product transfer</option>
-            <option>Buy-to-let</option>
-            <option>Commercial lending</option>
-            <option>Equity release</option>
-            <option>Protection or insurance</option>
-            <option>Something else</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="message">How can I help?</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <div class="form-consent">
-          <input type="checkbox" id="consent" name="consent" required>
-          <label for="consent">
-            I'm happy to be contacted about my enquiry. See the
-            <a href="privacy.html">privacy policy</a> for how your details are used.
-          </label>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Send enquiry</button>
-
-      </form>
-    </div>
-
-
-    <!-- ====================================================================
-         CONTACT DETAILS
-
-         Matters as much as the form. Plenty of people won't fill in a form
-         at all, and everyone wants to know what happens after they press
-         send.
-         ==================================================================== -->
-    <div>
-
-      <h2>Prefer to talk?</h2>
-      <p>
-        <a href="tel:+447920635771">07920 635771</a><br>
-        <a href="mailto:enquiries@cambridgemortgages.co.uk">enquiries@cambridgemortgages.co.uk</a>
-      </p>
-
-      <h3>What happens next</h3>
-      <p>I'll get back to you within one working day, usually sooner. The first
-         conversation is free, there's no obligation, and it's mostly me asking
-         questions to understand what you're trying to do.</p>
-
-      <h3>Where I work</h3>
-      <p>Based in Cambridgeshire, working with clients across the UK. Meetings
-         by phone, video call, or in person if you're local.</p>
-
-      <h3>What it costs</h3>
-      <!-- TODO: confirm fee structure with Dad — must be disclosed. -->
-      <p>TODO</p>
-
-    </div>
-
-    </div>
-  </section>
-
+    <section class="section">
+      <div class="container">
+        <h1>Thanks — I've got your message</h1>
+        <p>I'll come back to you within one working day. If it's urgent,
+          call <a href="tel:+447920635771">07920 635771</a>.</p>
+        <p><a class="btn btn-secondary" href="index.html">Back to the homepage</a></p>
+      </div>
+    </section>
+    
   </main>
 
 
@@ -231,7 +119,7 @@
         <div>
           <h3>Contact</h3>
           <ul>
-            <li><a href="tel:+441234567890">01234 567890</a></li>
+            <li><a href="tel:+447920635771">07920 635771</a></li>
             <li><a href="mailto:enquiries@cambridgemortgages.co.uk">enquiries@cambridgemortgages.co.uk</a></li>
           </ul>
         </div>
