@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambridge Mortgage Bureau | Trusted Guidance; Happier Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-green:#213c2d;
+    --sage:#77917b;
+    --tan:#d3b586;
+    --near-black:#001c00;
+    --sage-light:#a6b8a0;
+    --sage-mid:#7f987e;
+    --cream:#eeddbb;
+    --taupe:#c2b59b;
+    --grey:#dfe0e1;
+    --paper:#fbf8f2;
+
+    --font-display:'Times New Roman', Times, serif;
+    --font-heading:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --font-body:'Times New Roman', Times, serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--near-black);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.65;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px;}
+
+  h1,h2,h3,h4{margin:0 0 .5em;font-weight:700;color:var(--near-black);}
+  h1{font-family:var(--font-display);letter-spacing:.02em;}
+  h2,h3,h4{font-family:var(--font-heading);text-transform:none;}
+  .eyebrow{
+    font-family:var(--font-heading);
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--sage);
+    font-weight:700;
+    margin-bottom:.6em;
+    display:inline-block;
+  }
+  p{margin:0 0 1em;}
+  .lede{font-size:1.15rem;color:var(--deep-green);}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--grey);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:1140px;margin:0 auto;
+    gap:20px;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-size:1.15rem;
+    color:var(--deep-green);
+    text-decoration:none;
+    line-height:1.1;
+  }
+  .logo small{
+    display:block;
+    font-family:var(--font-heading);
+    font-weight:600;
+    letter-spacing:.14em;
+    font-size:.55rem;
+    color:var(--sage);
+    text-transform:uppercase;
+    margin-top:3px;
+  }
+  nav.main-nav{display:flex;gap:26px;flex-wrap:wrap;}
+  nav.main-nav a{
+    font-family:var(--font-heading);
+    font-size:.82rem;
+    font-weight:600;
+    letter-spacing:.03em;
+    text-decoration:none;
+    color:var(--deep-green);
+    position:relative;
+    padding:6px 0;
+    white-space:nowrap;
+  }
+  nav.main-nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+    background:var(--tan);transition:width .25s ease;
+  }
+  nav.main-nav a:hover::after{width:100%;}
+  .nav-toggle{display:none;}
+  @media (max-width:920px){
+    nav.main-nav{
+      display:none;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);
+      flex-direction:column;gap:0;
+      border-bottom:1px solid var(--grey);
+    }
+    nav.main-nav.open{display:flex;}
+    nav.main-nav a{padding:14px 28px;border-top:1px solid var(--grey);}
+    .nav-toggle{
+      display:block;background:none;border:1px solid var(--deep-green);
+      border-radius:4px;padding:8px 12px;font-size:1rem;cursor:pointer;
+      font-family:var(--font-heading);color:var(--deep-green);
+    }
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    background:linear-gradient(180deg,var(--deep-green) 0%, var(--near-black) 100%);
+    color:var(--cream);
+    padding:96px 28px 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(211,181,134,.16), transparent 45%),
+      radial-gradient(circle at 8% 92%, rgba(119,145,123,.22), transparent 40%);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:1140px;margin:0 auto;position:relative;}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.4rem,5vw,3.6rem);
+    max-width:14ch;
+    margin-bottom:.3em;
+  }
+  .hero .rule{
+    width:64px;height:3px;background:var(--tan);margin:26px 0 26px;
+  }
+  .hero p.hero-sub{
+    font-family:var(--font-heading);
+    font-weight:400;
+    color:var(--sage-light);
+    max-width:46ch;
+    font-size:1.05rem;
+  }
+  .hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--font-heading);
+    font-weight:700;
+    font-size:.85rem;
+    letter-spacing:.03em;
+    padding:14px 26px;
+    border-radius:2px;
+    text-decoration:none;
+    display:inline-block;
+    border:1.5px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--tan);color:var(--near-black);}
+  .btn-primary:hover{background:#e4cba0;}
+  .btn-ghost{border-color:var(--sage-light);color:var(--cream);}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);}
+
+  .hero-path{
+    margin-top:64px;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-family:var(--font-heading);font-size:.78rem;color:var(--sage-light);letter-spacing:.03em;
+  }
+  .hero-path span.dot{width:5px;height:5px;border-radius:50%;background:var(--tan);}
+
+  /* ===== Sections generic ===== */
+  section{padding:84px 0;}
+  section.alt{background:#fff;}
+  section.deep{
+    background:var(--deep-green);color:var(--cream);
+  }
+  section.deep h2, section.deep h3{color:#fff;}
+  section.deep .eyebrow{color:var(--tan);}
+  .section-head{max-width:640px;margin-bottom:48px;}
+
+  /* ===== Cards / grids ===== */
+  .grid{display:grid;gap:28px;}
+  .grid-2{grid-template-columns:1fr 1fr;}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+
+  .card{
+    background:#fff;
+    border:1px solid var(--grey);
+    padding:30px 26px;
+    border-radius:3px;
+  }
+  .card h3{font-size:1.05rem;margin-bottom:.4em;color:var(--deep-green);}
+  .card p{font-size:.95rem;color:#333;margin-bottom:0;}
+  .card .tag{
+    font-family:var(--font-heading);font-size:.68rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:10px;display:block;
+  }
+
+  .stat-row{display:flex;gap:44px;flex-wrap:wrap;margin-top:10px;}
+  .stat{min-width:140px;}
+  .stat .num{
+    font-family:var(--font-display);font-weight:700;font-size:2.2rem;color:var(--deep-green);
+    line-height:1;
+  }
+  .stat .label{font-family:var(--font-heading);font-size:.78rem;color:var(--sage);margin-top:6px;letter-spacing:.02em;}
+
+  /* ===== Compare list ===== */
+  .why-list{list-style:none;margin:0;padding:0;display:grid;gap:18px;}
+  .why-list li{
+    display:flex;gap:16px;align-items:flex-start;
+    padding-bottom:18px;border-bottom:1px solid var(--grey);
+  }
+  .why-list li:last-child{border-bottom:none;}
+  .why-mark{
+    flex:none;width:26px;height:26px;border-radius:50%;
+    background:var(--tan);color:var(--near-black);
+    font-family:var(--font-heading);font-weight:700;font-size:.8rem;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .why-list h4{margin:0 0 3px;font-size:1rem;color:var(--deep-green);}
+  .why-list p{margin:0;font-size:.94rem;color:#333;}
+
+  /* ===== Journey / process path (signature element) ===== */
+  .journey{margin:34px 0 6px;}
+  .journey-track{
+    display:flex;align-items:flex-start;
+    overflow-x:auto;
+    padding-bottom:10px;
+    gap:0;
+  }
+  .journey-step{
+    flex:1 1 0;
+    min-width:150px;
+    position:relative;
+    padding:0 14px;
+    text-align:left;
+  }
+  .journey-step .node{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--deep-green);color:#fff;
+    font-family:var(--font-heading);font-weight:700;font-size:.85rem;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;z-index:2;margin-bottom:14px;
+  }
+  .journey-step .line{
+    position:absolute;top:17px;left:-50%;width:100%;height:2px;
+    background-image:linear-gradient(90deg, var(--tan) 0 6px, transparent 6px 12px);
+    background-size:12px 2px;background-repeat:repeat-x;
+    z-index:1;
+  }
+  .journey-step:first-child .line{display:none;}
+  .journey-step h5{
+    font-family:var(--font-heading);font-size:.86rem;font-weight:700;
+    color:var(--deep-green);margin:0 0 4px;
+  }
+  .journey-step p{font-size:.82rem;color:#444;margin:0;}
+  @media (max-width:760px){
+    .journey-track{flex-direction:column;gap:26px;}
+    .journey-step{padding:0 0 0 44px;}
+    .journey-step .line{
+      top:-16px;left:16px;width:2px;height:26px;
+      background-image:linear-gradient(180deg, var(--tan) 0 6px, transparent 6px 12px);
+      background-size:2px 12px;
+    }
+    .journey-step .node{position:absolute;left:0;top:0;}
+  }
+
+  /* ===== Sub-nav pills within a section ===== */
+  .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+  .pill{
+    font-family:var(--font-heading);font-size:.78rem;font-weight:600;
+    padding:8px 16px;border:1px solid var(--sage-light);border-radius:20px;
+    text-decoration:none;color:var(--deep-green);
+  }
+  .pill:hover{background:var(--sage-light);}
+
+  .mortgage-block{padding:44px 0;border-top:1px solid var(--grey);}
+  .mortgage-block:first-of-type{border-top:none;padding-top:0;}
+  .mortgage-block h3{font-size:1.35rem;color:var(--deep-green);}
+  .mortgage-block .desc{max-width:70ch;font-size:.98rem;color:#333;}
+
+  /* ===== Calculators ===== */
+  .calc-card{
+    background:#fff;border:1px solid var(--grey);border-radius:4px;
+    padding:32px;
+  }
+  .calc-card h3{color:var(--deep-green);font-size:1.15rem;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;font-family:var(--font-heading);font-size:.78rem;font-weight:600;
+    letter-spacing:.02em;color:var(--near-black);margin-bottom:6px;
+  }
+  .field input{
+    width:100%;padding:11px 12px;border:1px solid var(--taupe);border-radius:3px;
+    font-family:var(--font-body);font-size:.95rem;background:var(--paper);
+  }
+  .field input:focus{outline:2px solid var(--sage);outline-offset:1px;}
+  .calc-result{
+    margin-top:20px;padding:18px 20px;background:var(--cream);border-radius:3px;
+    font-family:var(--font-heading);
+  }
+  .calc-result .big{font-family:var(--font-display);font-size:1.9rem;font-weight:700;color:var(--deep-green);}
+  .calc-result .small{font-size:.78rem;color:#4a4a3a;margin-top:4px;}
+  .calc-note{font-size:.78rem;color:#666;margin-top:14px;}
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-item{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;}
+  .contact-item .ic{
+    width:38px;height:38px;border-radius:50%;background:var(--sage-light);
+    display:flex;align-items:center;justify-content:center;flex:none;color:var(--deep-green);
+    font-family:var(--font-heading);font-weight:700;font-size:.85rem;
+  }
+  .contact-item h4{margin:0 0 2px;font-size:.95rem;color:var(--deep-green);}
+  .contact-item p{margin:0;font-size:.95rem;}
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--near-black);color:var(--sage-light);
+    padding:48px 0 30px;font-size:.82rem;
+  }
+  footer .foot-logo{
+    font-family:var(--font-display);font-weight:700;color:#fff;
+    text-transform:uppercase;letter-spacing:.06em;font-size:1rem;margin-bottom:14px;
+  }
+  footer p{color:var(--sage-light);max-width:80ch;}
+  footer .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:20px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--font-heading);font-size:.72rem;letter-spacing:.02em;
+  }
+
+  ::selection{background:var(--tan);color:var(--near-black);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo">CAMBRIDGE MORTGAGE BUREAU<small>Trusted Guidance; Happier Homes</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#about">About Us</a>
+      <a href="#residential">Residential Mortgages</a>
+      <a href="#btl">Buy to Let</a>
+      <a href="#commercial">Commercial &amp; Credit</a>
+      <a href="#protection">Protection</a>
+      <a href="#calculators">Check My Buying Power</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow" style="color:var(--tan)">Cambridge Mortgage Bureau</span>
+    <h1>Trusted Guidance; Happier Homes.</h1>
+    <div class="rule"></div>
+    <p class="hero-sub">Straight-talking mortgage and protection advice, from the first phone call to the day you collect your keys — and every remortgage after that.</p>
+    <div class="hero-ctas">
+      <a href="#calculators" class="btn btn-primary">Check my buying power</a>
+      <a href="#contact" class="btn btn-ghost">Speak to an adviser</a>
+    </div>
+    <div class="hero-path">
+      <span>First Time Buyers</span><span class="dot"></span>
+      <span>Home Movers</span><span class="dot"></span>
+      <span>Remortgages</span><span class="dot"></span>
+      <span>Buy to Let</span><span class="dot"></span>
+      <span>Commercial</span><span class="dot"></span>
+      <span>Protection</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">About Us</span>
+      <h2>Who are we?</h2>
+      <p class="lede">We're Cambridge Mortgage Bureau — people you can actually talk to about the biggest financial decision most of us ever make.</p>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <p>Cambridge Mortgage Bureau Limited (CMB) is registered with Companies House under company number <strong>17370060</strong>. We are an Appointed Representative of Flexi Network Limited, which is authorised and regulated by the Financial Conduct Authority (FCA Number: <strong>948658</strong>, Company Registration number: <strong>13067602</strong>).</p>
+        <p>Registered Office: Suite 1, 16a Alderley Road, Wilmslow, SK9 1JX.</p>
+        <p>We work with first time buyers, home movers, landlords and business owners across the country, cutting through the jargon so you always know exactly where you stand.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Why choose us</span>
+        <ul class="why-list" style="margin-top:6px;">
+          <li><div class="why-mark">%</div><div><h4>100% pass ratio</h4><p>Every application we submit is prepared properly the first time — no guesswork, no wasted applications.</p></div></li>
+          <li><div class="why-mark">1:1</div><div><h4>Personalised, one-to-one support</h4><p>You get a named adviser who knows your circumstances, not a call centre queue.</p></div></li>
+          <li><div class="why-mark">→</div><div><h4>End-to-end assistance</h4><p>We stay with you from your first enquiry through to completion day, and beyond.</p></div></li>
+          <li><div class="why-mark">∞</div><div><h4>Whole of market access</h4><p>We're not tied to one lender, so we search the market to find the deal that actually fits you.</p></div></li>
+          <li><div class="why-mark">✓</div><div><h4>Hands-on lender knowledge</h4><p>We know which lenders say yes to which situations — and match you accordingly.</p></div></li>
+          <li><div class="why-mark">H</div><div><h4>Honesty &amp; integrity, second to none</h4><p>If a deal isn't right for you, we'll tell you. Straight advice, always.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESIDENTIAL -->
+<section id="residential">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Residential Mortgages</span>
+      <h2>Residential mortgages, explained simply</h2>
+      <p class="lede">A residential mortgage is a loan secured against the home you're going to live in. The lender agrees to lend you a set amount, over an agreed term, secured against the property — and you pay it back monthly, usually with interest.</p>
+    </div>
+    <div class="pill-row">
+      <a class="pill" href="#ftb">First Time Buyers</a>
+      <a class="pill" href="#movers">Home Movers</a>
+      <a class="pill" href="#remortgage">Re-mortgages</a>
+      <a class="pill" href="#transfer">Product Transfers</a>
+      <a class="pill" href="#rtb">Right to Buy</a>
+    </div>
+
+    <!-- First Time Buyers -->
+    <div class="mortgage-block" id="ftb">
+      <h3>First Time Buyers</h3>
+      <p class="desc">A first time buyer is anyone who has never owned a property before, anywhere in the world. We know that being new to the process can feel overwhelming — mortgage jargon, stacks of paperwork, and a lot riding on getting it right. That's exactly why we're here. Our promise to every first time buyer is simple: one-to-one support from someone you can trust, at every single step.</p>
+      <div class="journey">
+        <div class="journey-track">
+          <div class="journey-step"><div class="line"></div><div class="node">1</div><h5>Desire to buy</h5><p>You decide it's time to own your first home.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">2</div><h5>Contact your adviser</h5><p>We introduce ourselves and explain how it all works.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">3</div><h5>Fact find</h5><p>We get to know your income, outgoings and goals.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">4</div><h5>Decision in Principle</h5><p>We confirm roughly what you can borrow.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">5</div><h5>View properties</h5><p>You book viewings with estate agents, DIP in hand.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">6</div><h5>Select a property</h5><p>You find the one — and make an offer.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">7</div><h5>Mortgage application</h5><p>We submit the full application on your behalf.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">8</div><h5>Mortgage offer</h5><p>The lender formally offers you the loan.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">9</div><h5>Searches</h5><p>Your solicitor carries out legal searches.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">10</div><h5>Exchange &amp; completion</h5><p>Contracts exchange, and the home becomes yours.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Movers -->
+    <div class="mortgage-block" id="movers">
+      <h3>Home Movers</h3>
+      <p class="desc">Home movers are homeowners who already have a mortgage and are ready to move on to their next property — upsizing, downsizing, or simply relocating. We help you understand what you can afford, and build a plan that makes the move happen smoothly.</p>
+      <div class="journey">
+        <div class="journey-track">
+          <div class="journey-step"><div class="line"></div><div class="node">1</div><h5>Contact your adviser</h5><p>Tell us you're thinking about your next move.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">2</div><h5>Talk through your goals</h5><p>We explore what moving means for you and your budget.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">3</div><h5>Build the plan</h5><p>We work out how to finance your new home.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">4</div><h5>Put it into action</h5><p>We manage the application through to completion.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Re-mortgages -->
+    <div class="mortgage-block" id="remortgage">
+      <h3>Re-mortgages</h3>
+      <p class="desc">A re-mortgage is when you switch your existing mortgage to a new deal — either with your current lender or a new one — without moving house. This can be a "like-for-like" switch onto a better rate, or "further borrowing" to release equity for home improvements, debt consolidation, or other purposes.</p>
+      <div class="journey">
+        <div class="journey-track">
+          <div class="journey-step"><div class="line"></div><div class="node">1</div><h5>Contact your adviser</h5><p>We check when your current deal ends.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">2</div><h5>Explain your goals</h5><p>Better rate, extra borrowing, or both.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">3</div><h5>Discuss &amp; agree options</h5><p>We compare deals and agree the way forward.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">4</div><h5>Apply &amp; transfer</h5><p>We handle the application and the switch to your new lender.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Transfers -->
+    <div class="mortgage-block" id="transfer">
+      <h3>Product Transfers</h3>
+      <p class="desc">A product transfer means moving onto a new deal with your existing lender, rather than switching lenders entirely. It's usually quicker and involves less paperwork than a re-mortgage, though it can mean fewer options — which is why it's worth checking the whole market first.</p>
+      <div class="journey">
+        <div class="journey-track">
+          <div class="journey-step"><div class="line"></div><div class="node">1</div><h5>Contact your adviser</h5><p>We flag your deal's end date in good time.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">2</div><h5>Discuss your goals</h5><p>We understand what you need from your next deal.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">3</div><h5>Explore options</h5><p>We weigh your lender's offer against the wider market.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">4</div><h5>Submit the transfer</h5><p>We arrange the switch, with no new legal work required.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right to Buy -->
+    <div class="mortgage-block" id="rtb">
+      <h3>Right to Buy</h3>
+      <p class="desc">Right to Buy allows eligible council or housing association tenants to buy their home, often at a discount to market value. It differs from a traditional mortgage in that the discount itself can sometimes be used in place of a deposit, and eligibility depends on tenancy length and property type rather than just income and credit history.</p>
+      <div class="journey">
+        <div class="journey-track">
+          <div class="journey-step"><div class="line"></div><div class="node">1</div><h5>Check eligibility</h5><p>We confirm your tenancy qualifies and estimate your discount.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">2</div><h5>Apply</h5><p>You submit your Right to Buy application to your landlord.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">3</div><h5>Get an offer</h5><p>We secure a mortgage offer alongside your discount.</p></div>
+          <div class="journey-step"><div class="line"></div><div class="node">4</div><h5>Finalise with a solicitor</h5><p>Your solicitor completes the legal purchase.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY TO LET -->
+<section id="btl" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Buy to Let</span>
+      <h2>Buy to Let Mortgages</h2>
+      <p class="lede">A buy to let mortgage is designed for a property you intend to rent out, not live in yourself. Affordability is assessed differently to a residential mortgage — lenders look mainly at the rent the property can achieve, rather than just your personal income.</p>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom:56px;">
+      <div class="card">
+        <span class="tag">Key considerations</span>
+        <p>How you purchase matters as much as what you purchase. We usually talk through whether to buy in your own name or through a Special Purpose Vehicle (SPV) company, weighing up tax efficiency against your long-term ambitions — such as growing a wider property portfolio.</p>
+        <p style="margin-bottom:0;"><strong>Important:</strong> it is paramount that you seek independent tax advice before deciding how to structure a buy to let purchase — we're here to arrange the mortgage, not to advise on tax.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Types of Buy to Let</span>
+        <ul class="why-list" style="margin-top:6px;">
+          <li><div class="why-mark">1</div><div><h4>Buy to Let (Residential)</h4><p>A standard single let to one household or tenancy.</p></div></li>
+          <li><div class="why-mark">2</div><div><h4>House of Multiple Occupancy (HMO)</h4><p>Let by the room to three or more unrelated tenants sharing facilities.</p></div></li>
+          <li><div class="why-mark">3</div><div><h4>Holiday Let</h4><p>Furnished property let short-term to holidaymakers.</p></div></li>
+          <li><div class="why-mark">4</div><div><h4>Commercial Let</h4><p>Property let to a business tenant rather than a residential occupier.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL -->
+<section id="commercial">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Commercial Mortgages &amp; Credit</span>
+      <h2>Commercial Mortgages &amp; Credit</h2>
+      <p class="lede">Commercial finance suits businesses buying trading premises, investors purchasing commercial property, or developers funding a project. It's best suited to anyone looking to secure a loan against a property that isn't a standard residential home.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="tag">Commercial Mortgages</span>
+        <h3>For trading &amp; investment property</h3>
+        <p>A loan secured against a commercial property, whether you're buying premises to trade from or a building to let to a business tenant. Terms are typically assessed on the strength of the business or the rental income.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Bridging Finance</span>
+        <h3>Fast, short-term funding</h3>
+        <p>A short-term loan used to "bridge" a gap — for example, buying a new property before selling an existing one, or moving quickly on an auction purchase.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Development Loans</span>
+        <h3>For building &amp; conversion projects</h3>
+        <p>Finance released in stages against a construction or conversion project, matched to the build timeline from groundworks through to completion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTECTION -->
+<section id="protection" class="deep">
+  <div class="wrap">
+    <div class="grid grid-2" style="align-items:center;">
+      <div>
+        <span class="eyebrow">Protection</span>
+        <h2>Protect the home you've worked so hard for</h2>
+        <p style="color:var(--sage-light);">We are fully qualified and licensed to advise on all of your protection needs, including Life Insurance, Income Protection, Critical Illness Cover, Family Income Benefit and Accident Cover.</p>
+        <p style="color:var(--sage-light);">We take a risk-based approach with every individual and family, built around your unique circumstances and your budget — because protecting your mortgage means protecting the financial future of the people who matter most to you.</p>
+      </div>
+      <div class="grid" style="gap:16px;">
+        <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18);color:#fff;">
+          <span class="tag" style="color:var(--tan);">Life Insurance</span>
+          <p style="color:var(--sage-light);">A lump sum for your loved ones if the worst were to happen.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18);color:#fff;">
+          <span class="tag" style="color:var(--tan);">Income Protection</span>
+          <p style="color:var(--sage-light);">A regular income if you're unable to work due to illness or injury.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18);color:#fff;">
+          <span class="tag" style="color:var(--tan);">Critical Illness &amp; Family Income Benefit</span>
+          <p style="color:var(--sage-light);">Support on diagnosis of a serious illness, or ongoing income for your family.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATORS -->
+<section id="calculators" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Check My Buying Power</span>
+      <h2>Get a quick, high-level estimate</h2>
+      <p class="lede">These calculators give a rough guide only — they're a starting point for a conversation, not a mortgage offer. Speak to us for an accurate, personalised assessment.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <!-- Mortgage calculator -->
+      <div class="calc-card">
+        <h3>Mortgage Calculator</h3>
+        <div class="field"><label for="mc-price">Purchase price (£)</label><input type="number" id="mc-price" value="300000" min="0"></div>
+        <div class="field"><label for="mc-deposit">Deposit (£)</label><input type="number" id="mc-deposit" value="30000" min="0"></div>
+        <div class="field"><label for="mc-term">Term (years)</label><input type="number" id="mc-term" value="25" min="1" max="40"></div>
+        <div class="field"><label for="mc-rate">Interest rate (% per year)</label><input type="number" id="mc-rate" value="4.5" step="0.01" min="0"></div>
+        <div class="calc-result" id="mc-result">
+          <div class="big">£1,500 / mo</div>
+          <div class="small">Loan amount £270,000 · LTV 90%</div>
+        </div>
+        <p class="calc-note">Estimated capital &amp; interest repayment mortgage. Excludes fees.</p>
+      </div>
+
+      <!-- Affordability calculator -->
+      <div class="calc-card">
+        <h3>Affordability Calculator</h3>
+        <div class="field"><label for="ac-salary1">Applicant 1 – annual gross salary (£)</label><input type="number" id="ac-salary1" value="35000" min="0"></div>
+        <div class="field"><label for="ac-salary2">Applicant 2 – annual gross salary (£, optional)</label><input type="number" id="ac-salary2" value="0" min="0"></div>
+        <div class="field"><label for="ac-commit">Monthly commitments (£) — credit cards, loans, BNPL</label><input type="number" id="ac-commit" value="150" min="0"></div>
+        <div class="calc-result" id="ac-result">
+          <div class="big">£157,500</div>
+          <div class="small">Rough estimate of maximum borrowing</div>
+        </div>
+        <p class="calc-note">Based on a broad 4.5x combined income multiple, less annual commitments. Actual lending is assessed individually by each lender.</p>
+      </div>
+
+      <!-- Stamp duty -->
+      <div class="calc-card">
+        <h3>Stamp Duty Calculator</h3>
+        <p style="font-size:.95rem;color:#333;">Stamp Duty Land Tax (SDLT) depends on price, location and buyer status (e.g. first time buyer, additional property). For an accurate, up-to-date figure, use the official UK Government calculator.</p>
+        <a class="btn btn-primary" style="margin-top:10px;" href="https://www.gov.uk/stamp-duty-land-tax" target="_blank" rel="noopener">Open the gov.uk SDLT calculator ↗</a>
+        <p class="calc-note">This takes you to an external gov.uk website.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's talk about your next move</h2>
+      <p class="lede">Whether you're just starting to explore your options or ready to apply, we're a phone call or email away.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="ic">☎</div>
+          <div><h4>Phone</h4><p><a href="tel:07920635771">07920 635771</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">✉</div>
+          <div><h4>Email</h4><p><a href="mailto:info@cambridgemortgages.co.uk">info@cambridgemortgages.co.uk</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">⌂</div>
+          <div><h4>Address</h4><p>18 Yeomans Way, Littleport, Cambridgeshire, CB6 1FL</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--deep-green);">Send us a message</h3>
+        <form id="contactForm" onsubmit="return false;">
+          <div class="field"><label for="cf-name">Name</label><input type="text" id="cf-name" required></div>
+          <div class="field"><label for="cf-email">Email</label><input type="email" id="cf-email" required></div>
+          <div class="field"><label for="cf-msg">Message</label><input type="text" id="cf-msg" placeholder="How can we help?"></div>
+          <button type="button" class="btn btn-primary" onclick="sendMail()">Email us</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">Cambridge Mortgage Bureau</div>
+    <p>Cambridge Mortgage Bureau Limited (CMB), company number 17370060, is an Appointed Representative of Flexi Network Limited, which is authorised and regulated by the Financial Conduct Authority (FCA Number: 948658, Company Registration number: 13067602). Registered Office: Suite 1, 16a Alderley Road, Wilmslow, SK9 1JX.</p>
+    <p>Your home may be repossessed if you do not keep up repayments on your mortgage.</p>
+    <div class="foot-bottom">
+      <span>© 2026 Cambridge Mortgage Bureau Limited</span>
+      <span>18 Yeomans Way, Littleport, Cambridgeshire, CB6 1FL · 07920 635771</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+  document.querySelectorAll('#mainNav a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('mainNav').classList.remove('open'); });
+  });
+
+  function fmtGBP(n){
+    return '£' + Math.round(n).toLocaleString('en-GB');
+  }
+
+  // Mortgage calculator
+  function calcMortgage(){
+    var price = parseFloat(document.getElementById('mc-price').value) || 0;
+    var deposit = parseFloat(document.getElementById('mc-deposit').value) || 0;
+    var years = parseFloat(document.getElementById('mc-term').value) || 1;
+    var rate = parseFloat(document.getElementById('mc-rate').value) || 0;
+
+    var loan = Math.max(price - deposit, 0);
+    var ltv = price > 0 ? (loan / price * 100) : 0;
+    var monthlyRate = (rate / 100) / 12;
+    var n = years * 12;
+    var monthly;
+    if(monthlyRate === 0){
+      monthly = loan / n;
+    } else {
+      monthly = loan * (monthlyRate * Math.pow(1+monthlyRate, n)) / (Math.pow(1+monthlyRate, n) - 1);
+    }
+    document.querySelector('#mc-result .big').textContent = fmtGBP(monthly) + ' / mo';
+    document.querySelector('#mc-result .small').textContent =
+      'Loan amount ' + fmtGBP(loan) + ' · LTV ' + ltv.toFixed(0) + '%';
+  }
+  ['mc-price','mc-deposit','mc-term','mc-rate'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', calcMortgage);
+  });
+  calcMortgage();
+
+  // Affordability calculator
+  function calcAfford(){
+    var s1 = parseFloat(document.getElementById('ac-salary1').value) || 0;
+    var s2 = parseFloat(document.getElementById('ac-salary2').value) || 0;
+    var commit = parseFloat(document.getElementById('ac-commit').value) || 0;
+    var maxBorrow = ((s1 + s2) * 4.5) - (commit * 12);
+    maxBorrow = Math.max(maxBorrow, 0);
+    document.querySelector('#ac-result .big').textContent = fmtGBP(maxBorrow);
+  }
+  ['ac-salary1','ac-salary2','ac-commit'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', calcAfford);
+  });
+  calcAfford();
+
+  function sendMail(){
+    var name = document.getElementById('cf-name').value;
+    var email = document.getElementById('cf-email').value;
+    var msg = document.getElementById('cf-msg').value;
+    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+    window.location.href = 'mailto:info@cambridgemortgages.co.uk?subject=Website%20enquiry&body=' + body;
+  }
+</script>
+
+</body>
+</html>
