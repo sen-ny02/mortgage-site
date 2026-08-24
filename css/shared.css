@@ -59,6 +59,7 @@
   --color-brand: #213c2d;           /* Dark forest green. The brand colour.  */
   --color-brand-dark: #001c00;      /* Near-black green. Hover states.       */
   --color-brand-tint: #f8f2e9;      /* Warm cream. Section backgrounds.      */
+  --color-brand-light: #2e5340;
 
   --color-sage: #77917b;            /* Muted sage. Borders, rules, icons.    */
   --color-sage-light: #a6b8a0;      /* Pale sage. Text on dark green.        */
