@@ -9,10 +9,18 @@
    ========================================================================== */
 
 .hero {
-  background: var(--color-brand-tint);
-  /* Deeper than a standard section. The hero is the one place on the site
-     that gets extra vertical space. */
-  padding-block: clamp(3rem, 8vw, 6rem);
+  /* Spotlight effect. A radial gradient positioned off-centre so the light
+     appears to fall from the upper left rather than sitting flat.
+     - 'ellipse at 30% 25%' is where the light source sits
+     - the three colour stops go bright centre -> brand -> near-black edge
+     Adjust the percentages to move the light around. */
+  background:
+      radial-gradient(ellipse 90% 80% at 30% 25%,
+      var(--color-brand-light) 0%,
+      var(--color-brand) 45%,
+      var(--color-brand-dark) 100%);
+
+  padding-block: clamp(4rem, 12vw, 8rem);
 }
 
 .hero h1 {
@@ -27,9 +35,8 @@
   font-size: var(--text-lg);
   max-width: 55ch;
   margin-block-end: var(--space-xl);
-  color: var(--color-text-muted);
 }
 
 .btn-secondary-sam{
-    margin-top: 30px;
+    margin-top: var(--space-xl);
 }
