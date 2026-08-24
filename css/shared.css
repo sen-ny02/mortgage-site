@@ -22,6 +22,8 @@
      4. Layout — container and sections
      5. Site header
      6. Site footer
+     A-J. Components (buttons, cards, layout, prose, pills, forms, CTA,
+          process steps, stat cards, calculators)
      7. Motion
    ========================================================================== */
 
@@ -33,38 +35,58 @@
    Every colour, size and spacing value on the site comes from here.
    Nothing anywhere else in the project should contain a raw hex code.
 
-   Why: when the brand colours change (they will — we're waiting on the
-   logo), we edit this one block and the whole site updates. If colours
-   are hardcoded across six pages, that change becomes a nightmare.
+   Why: when the brand colours change, we edit this one block and the
+   whole site updates. If colours are hardcoded across six pages, that
+   change becomes a nightmare.
 
    A custom property is declared as  --name: value;  and used as
    var(--name). :root means "the whole document".
    ========================================================================== */
 
 :root {
-/* --- Brand colours ------------------------------------------------------
-     From the Cambridge Mortgage Bureau brand sheet.
-     Note: the names on the brand sheet don't match the colours (their
-     "charcoal" is cream, their "stone" is black). Go by value, not name.
+  /* --- Brand colours ------------------------------------------------------
+     Official Cambridge Mortgage Bureau palette. These are final.
+
+     CONTRAST — read before using these anywhere:
+       On WHITE, only --color-brand and --color-text are safe for text.
+       --color-sage is about 3.2:1 and --color-gold about 1.9:1, both of
+       which fail the 4.5:1 minimum for body text. They are for borders,
+       rules and decoration only.
+       On DARK GREEN, --color-gold passes comfortably and is the correct
+       accent colour. See the .section-dark rules in section 4.
      ---------------------------------------------------------------------- */
 
-  --color-brand: #22382c;           /* Dark forest green. Logo, buttons, headings. */
-  --color-brand-dark: #172619;      /* Darker shade for button hover states.       */
-  --color-brand-tint: #f6f2ec;      /* Warm ivory. Section backgrounds.            */
+  --color-brand: #213c2d;           /* Dark forest green. The brand colour.  */
+  --color-brand-dark: #001c00;      /* Near-black green. Hover states.       */
+  --color-brand-tint: #f8f2e9;      /* Warm cream. Section backgrounds.      */
 
-  --color-sage: #7d8f7b;            /* Muted sage. Borders, dividers, icons.
-                                       NOT for body text — see note below.         */
-  --color-gold: #cfb68d;            /* Warm tan. Thin accents only.
-                                       NOT for text or buttons — see note below.   */
+  --color-sage: #77917b;            /* Muted sage. Borders, rules, icons.    */
+  --color-sage-light: #a6b8a0;      /* Pale sage. Text on dark green.        */
+  --color-gold: #d3b586;            /* Warm tan. Accents only — see above.   */
+  --color-gold-light: #eeddbb;      /* Pale tan. Backgrounds only.           */
+  --color-stone: #c2b59b;           /* Greige. Borders on cream.             */
+  --color-mist: #dfe0e1;            /* Cool light grey. Rarely needed.       */
 
-  /* --- Neutrals ----------------------------------------------------------- */
+  /* --- Neutrals -----------------------------------------------------------
+     Warmed slightly to sit with the cream rather than fight it.
+     ---------------------------------------------------------------------- */
 
-  --color-text: #1a1a1a;
-  --color-text-muted: #5a5f58;      /* Slightly green-tinted grey, sits with the brand. */
+  --color-text: #1c1c1a;
+  --color-text-muted: #55605a;      /* Green-tinted grey.                    */
   --color-bg: #ffffff;
-  --color-bg-alt: #f6f2ec;          /* Same warm ivory as the brand tint.          */
-  --color-border: #e3ddd2;          /* Warm hairline, tuned to the ivory.          */
-  --color-border-strong: #c3bba9;
+  --color-bg-alt: #f8f2e9;          /* Same warm cream as the brand tint.    */
+  --color-border: #e8dfd1;          /* Warm hairline, tuned to the cream.    */
+  --color-border-strong: #c2b59b;   /* Same value as --color-stone.          */
+
+  /* --- Colours for use ON dark green sections ------------------------------
+     Text on --color-brand must come from here, not from the neutrals above.
+     The .section-dark rules apply these automatically — you should not
+     normally need to use them by hand.
+     ---------------------------------------------------------------------- */
+
+  --color-on-dark: #f8f2e9;         /* Body text on dark green. ~10:1.       */
+  --color-on-dark-muted: #a6b8a0;   /* Secondary text on dark green.         */
+  --color-on-dark-accent: #d3b586;  /* Gold accents on dark green. ~5.5:1.   */
 
   /* --- Status colours (used by form validation) ---------------------------- */
 
@@ -80,8 +102,19 @@
      'vw' means percent of viewport width, so 4vw grows as the window does.
      ---------------------------------------------------------------------- */
 
+  /* Headings use a serif, body uses a sans. This is the reverse of the
+     brand document, and deliberately so: Times was designed for narrow
+     print columns and reads as an unstyled document on screen. Source
+     Serif 4 is from the same classical tradition but drawn for screens.
+
+     Georgia is the fallback, so if the webfont fails to load the page
+     still looks right rather than dropping to Times.
+
+     The webfont is loaded by a <link> tag in each page's <head>. If
+     headings look like the body text, that tag is missing. */
+
   --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
 
   --text-xs: 0.8rem;
   --text-sm: 0.9rem;
@@ -288,6 +321,101 @@ select:focus-visible {
 /* Modifier: pale brand tint background. */
 .section-tint {
   background: var(--color-brand-tint);
+}
+
+/* Modifier: dark green background with light text.
+   An ACCENT, not an alternative — one or two per page at most. Use it for
+   the hero or a mid-page break to stop a long white/cream alternation
+   becoming monotonous.
+
+   Everything inside recolours automatically: headings, paragraphs, links,
+   buttons, cards, pill lists and process numbers. You should not need to
+   write any colour rules of your own inside one. */
+.section-dark {
+  background: var(--color-brand);
+  color: var(--color-on-dark);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark p {
+  color: var(--color-on-dark);
+}
+
+.section-dark .eyebrow,
+.section-dark .section-header p {
+  color: var(--color-on-dark-muted);
+}
+
+.section-dark a {
+  color: var(--color-on-dark-accent);
+}
+
+.section-dark a:hover {
+  color: var(--color-gold-light);
+}
+
+/* Focus ring needs to be visible against dark green, not brand-coloured. */
+.section-dark a:focus-visible,
+.section-dark button:focus-visible,
+.section-dark input:focus-visible {
+  outline-color: var(--color-gold);
+}
+
+/* Buttons invert. The gold primary is readable on dark green (~5.5:1)
+   even though it fails on white — this is the one place gold works as a
+   background for text. */
+.section-dark .btn-primary {
+  background: var(--color-gold);
+  color: var(--color-brand-dark);
+}
+
+.section-dark .btn-primary:hover {
+  background: var(--color-gold-light);
+  color: var(--color-brand-dark);
+}
+
+.section-dark .btn-secondary {
+  color: var(--color-on-dark);
+  border-color: var(--color-sage-light);
+}
+
+.section-dark .btn-secondary:hover {
+  background: var(--color-on-dark);
+  color: var(--color-brand);
+}
+
+/* Cards sit slightly lighter than the background rather than white,
+   which would be too stark against the dark green. */
+.section-dark .card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(248, 242, 233, 0.18);
+}
+
+.section-dark .card p {
+  color: var(--color-on-dark-muted);
+}
+
+.section-dark .pill-list li {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-on-dark);
+}
+
+/* Short gold rule, for under a heading. Gold is poor as text but works
+   well as a decorative line, and it's where the accent colour earns its
+   keep on light backgrounds.
+
+     <h2>Heading</h2>
+     <hr class="rule-accent">
+*/
+.rule-accent {
+  width: 3rem;
+  height: 2px;
+  background: var(--color-gold);
+  border: none;
+  margin: 0 0 var(--space-lg) 0;
 }
 
 /* Standard heading block at the top of a section. */
@@ -987,6 +1115,171 @@ select:focus-visible {
   justify-content: center;
 }
 
+
+
+/* ==========================================================================
+   H. PROCESS STEPS
+   ==========================================================================
+   A numbered "here is what happens, in order" sequence. Used on the
+   residential mortgage pages.
+
+   Use <ol>, not <ul> — the order is the point, and screen readers announce
+   it as an ordered list.
+
+   THE NUMBERS COME FROM CSS, NOT FROM THE HTML. counter-reset starts the
+   count, counter-increment advances it once per <li>, and ::before prints
+   it. That means you can add, remove or reorder steps and the numbering
+   fixes itself. Never type a number into the heading.
+   ========================================================================== */
+
+.process {
+  display: grid;
+  /* Fits as many columns as will comfortably fit, then reflows. A ten-step
+     process becomes four columns on desktop and one on a phone, with no
+     media queries. */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.process li {
+  counter-increment: step;
+  /* The number is positioned absolutely, so the text needs room for it. */
+  position: relative;
+  padding-inline-start: 2.75rem;
+}
+
+.process li::before {
+  content: counter(step);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand);
+  color: var(--color-brand-tint);
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.process h3 {
+  font-size: var(--text-h4);
+  margin-block: 0.25rem var(--space-xs);
+}
+
+.process p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  /* Overrides the site-wide 65ch cap — these sit in narrow columns
+     already, so the cap would do nothing but complicate things. */
+  max-width: none;
+}
+
+.section-dark .process li::before {
+  background: var(--color-gold);
+  color: var(--color-brand-dark);
+}
+
+.section-dark .process p {
+  color: var(--color-on-dark-muted);
+}
+
+
+/* ==========================================================================
+   I. STAT CARDS
+   ==========================================================================
+   A card that leads with a large mark — a number, a symbol, a short
+   string. Used for the "Why choose us" grid.
+
+   Goes inside a .card-grid, and the element takes BOTH classes:
+     <li class="card stat-card">
+
+   Keep marks to four characters or fewer.
+   ========================================================================== */
+
+.stat-card-mark {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-sage);
+  margin-block-end: var(--space-md);
+}
+
+.section-dark .stat-card-mark {
+  color: var(--color-gold);
+}
+
+
+/* ==========================================================================
+   J. CALCULATORS
+   ==========================================================================
+   The inputs are ordinary .form-field blocks — nothing new needed there.
+   These rules cover the panel around them and the result readout.
+
+   COMPLIANCE: .calc-note is not decoration. The calculators are a
+   regulated financial promotion and the output must be presented clearly
+   as an illustration, never as an offer or a personal recommendation.
+   The wording is signed off by Flexi Network. Do not remove or reword it
+   without asking Sen.
+   ========================================================================== */
+
+.calc {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.calc h3 {
+  margin-block-start: 0;
+}
+
+/* The readout. Deliberately styled unlike the inputs so it is obvious
+   this is an output rather than another field to fill in. */
+.calc-result {
+  background: var(--color-brand);
+  color: var(--color-on-dark);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  margin-block: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.calc-result-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-on-dark);
+  margin: 0;
+  max-width: none;
+}
+
+.calc-result-detail {
+  font-size: var(--text-sm);
+  color: var(--color-on-dark-muted);
+  margin-block: var(--space-xs) 0;
+  max-width: none;
+}
+
+/* Mandatory disclaimer under every calculator. */
+.calc-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: none;
+}
 
 
 /* ==========================================================================
