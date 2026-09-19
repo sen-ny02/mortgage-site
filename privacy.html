@@ -1,59 +1,38 @@
 <!DOCTYPE html>
 <!--
-  ============================================================================
-  PAGE TEMPLATE — copy this file to start a new page.
-
-  HOW TO USE:
-    1. Copy this file and rename it (about.html, services.html, etc.)
-    2. Change the <title> and <meta name="description">
-    3. Change the css/PAGENAME.css link to match your page
-    4. Add aria-current="page" to your page's link in the nav
-    5. Write your content inside <main>
-
-  DO NOT change the header or footer markup. They are the same on every
-  page — if they need changing, tell Sen so it gets changed everywhere at
-  once.
-  ============================================================================
+  DRAFT — structure and placeholder wording only. This is not yet approved
+  legal text. Specifics marked TODO need confirming (with Oliver / Sen)
+  before launch: data retention periods, any third-party processors beyond
+  Netlify, and the ICO registration number if applicable.
 -->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CHANGE THIS. Shows in the browser tab and as the headline in Google
-       results. Format: Page name | Business name -->
-  <title>Page name | Cambridge Mortgage Bureau</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+  <title>Privacy policy | Cambridge Mortgage Bureau</title>
+  <meta name="description" content="How Cambridge Mortgage Bureau collects, uses and protects your personal data.">
+  <meta name="robots" content="noindex">
 
-  <!-- CHANGE THIS. The grey summary text under the link in Google results.
-       Aim for 140-155 characters. -->
-  <meta name="description" content="Whole-of-market mortgage and equity release advice from Cambridge, serving clients across the UK.">
-
-  <!-- Shared styles first, then page-specific styles. Order matters:
-       later rules win when specificity is equal, so your page CSS can
-       override the shared defaults if it needs to. -->
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/privacy.css">
 </head>
 
 <body>
 
-  <!-- Lets keyboard users jump past the nav. Hidden until focused. -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ==========================================================================
-       SITE HEADER — identical on every page. Do not edit.
+       SITE HEADER — identical on every page. Do not edit here; if it needs
+       changing it has to change in all six files at once.
        ========================================================================== -->
   <header class="site-header">
     <div class="container">
 
       <a class="site-logo" href="index.html">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
 
-      <!-- aria-label distinguishes this from the footer nav for screen
-           readers. Links are in a <ul> so screen readers announce how many
-           items there are before reading them. -->
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -63,27 +42,60 @@
         </ul>
       </nav>
 
-      <!-- tel: link makes the number tappable on mobile. Keep the href in
-           full international format (+44, no leading zero) and the visible
-           text in readable format.
-           TODO: replace with the real number when confirmed. -->
+      <!-- TODO: replace with the real number when confirmed. -->
       <a class="btn btn-primary" href="tel:+447920635771">07920 635771</a>
 
     </div>
   </header>
 
 
-  <!-- ==========================================================================
-       PAGE CONTENT — this is the part you write.
-       id="main" is the target of the skip link above.
-       ========================================================================== -->
   <main id="main">
 
     <section class="section">
       <div class="container">
-        <p class="eyebrow">Eyebrow label</p>
-        <h1>Page heading</h1>
-        <p>Your content goes here.</p>
+
+        <p class="eyebrow">Legal</p>
+        <h1>Privacy policy</h1>
+        <p class="prose-meta">Last updated: TODO — date of Flexi Network sign-off.</p>
+
+        <div class="prose">
+
+          <h2>Who we are</h2>
+          <p>Cambridge Mortgage Bureau Limited (company number 17370060), registered office 18 Yeomans Way, Littleport, Cambridgeshire, CB6 1FL, is the data controller for the personal information described in this policy.</p>
+          <p>Cambridge Mortgage Bureau is an Appointed Representative of Flexi Network Limited, which is authorised and regulated by the Financial Conduct Authority (FCA number 948658).</p>
+
+          <h2>What information we collect</h2>
+          <p>When you use the contact form on this site, we collect the information you provide: your name, email address, phone number if given, and the details of your enquiry.</p>
+          <p>TODO: confirm whether any information is collected automatically (for example through website analytics) — none is currently in use.</p>
+
+          <h2>How we use it</h2>
+          <ul>
+            <li>To respond to your enquiry and provide mortgage or protection advice.</li>
+            <li>To meet our regulatory and record-keeping obligations as a financial adviser.</li>
+            <li>TODO: confirm whether we contact enquirers for any other purpose, such as service updates.</li>
+          </ul>
+
+          <h2>Legal basis for processing</h2>
+          <p>We process your information because it is necessary to take steps at your request before entering into a contract with you, and to comply with our legal and regulatory obligations under FCA rules.</p>
+
+          <h2>Who we share it with</h2>
+          <p>Your enquiry is submitted through Netlify Forms, which processes the submission on our behalf. TODO: list any lenders or product providers your information may be shared with once you proceed with an application, and confirm Flexi Network's role as principal firm.</p>
+
+          <h2>How long we keep it</h2>
+          <p>TODO: confirm retention periods with Flexi Network — FCA rules typically require client records to be kept for a set number of years after a relationship ends.</p>
+
+          <h2>Your rights</h2>
+          <p>Under UK data protection law you have the right to access, correct, or request deletion of your personal data, and to object to or restrict certain processing. To exercise any of these rights, contact us using the details below.</p>
+
+          <h2>Cookies</h2>
+          <p>Details of the cookies used on this site are set out in our <a href="cookies.html">cookie policy</a>.</p>
+
+          <h2>Contact and complaints</h2>
+          <p>To ask a question about this policy or how your data is handled, contact us at <a href="mailto:enquiries@cambridgemortgages.co.uk">enquiries@cambridgemortgages.co.uk</a> or <a href="tel:+447920635771">07920 635771</a>.</p>
+          <p>If you are unhappy with how we've handled your data, you also have the right to complain to the Information Commissioner's Office (ICO) at ico.org.uk.</p>
+
+        </div>
+
       </div>
     </section>
 
@@ -91,10 +103,8 @@
 
 
   <!-- ==========================================================================
-       SITE FOOTER — identical on every page. Do not edit.
-
-       The regulatory text below is PLACEHOLDER wording. Flexi Network have
-       to supply the exact required text before this site goes live.
+       SITE FOOTER — identical on every page. Regulatory wording is placeholder
+       until Flexi Network confirm it.
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -162,7 +172,6 @@
     </div>
   </footer>
 
-  <!-- Scroll reveal animation. Loaded last so it doesn't block rendering. -->
   <script src="js/reveal.js"></script>
 
 </body>
