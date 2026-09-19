@@ -1,167 +1,143 @@
 <!DOCTYPE html>
-<!--
-  ============================================================================
-  PAGE TEMPLATE — copy this file to start a new page.
-
-  HOW TO USE:
-    1. Copy this file and rename it (about.html, services.html, etc.)
-    2. Change the <title> and <meta name="description">
-    3. Change the css/PAGENAME.css link to match your page
-    4. Add aria-current="page" to your page's link in the nav
-    5. Write your content inside <main>
-
-  DO NOT change the header or footer markup. They are the same on every
-  page — if they need changing, tell Sen so it gets changed everywhere at
-  once.
-  ============================================================================
--->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CHANGE THIS. Shows in the browser tab and as the headline in Google
-       results. Format: Page name | Business name -->
-  <title>Services | Cambridge Mortgage Bureau</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+  <title>Services | Cambridge Mortgage Bureau</title>
+  <meta name="description" content="Whole-of-market mortgage, buy-to-let, commercial, equity release and protection advice from Cambridge, serving clients across the UK.">
 
-  <!-- CHANGE THIS. The grey summary text under the link in Google results.
-       Aim for 140-155 characters. -->
-  <meta name="description" content="Whole-of-market mortgage and equity release advice from Cambridge, serving clients across the UK.">
-
-  <!-- Shared styles first, then page-specific styles. Order matters:
-       later rules win when specificity is equal, so your page CSS can
-       override the shared defaults if it needs to. -->
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/services.css">
 </head>
 
 <body>
 
-  <!-- Lets keyboard users jump past the nav. Hidden until focused. -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ==========================================================================
-       SITE HEADER — identical on every page. Do not edit.
+       SITE HEADER — identical on every page. Do not edit here; if it needs
+       changing it has to change in all six files at once.
        ========================================================================== -->
   <header class="site-header">
     <div class="container">
 
       <a class="site-logo" href="index.html">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
 
-      <!-- aria-label distinguishes this from the footer nav for screen
-           readers. Links are in a <ul> so screen readers announce how many
-           items there are before reading them. -->
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html"aria-current="page">Services</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- tel: link makes the number tappable on mobile. Keep the href in
-           full international format (+44, no leading zero) and the visible
-           text in readable format.
-           TODO: replace with the real number when confirmed. -->
+      <!-- TODO: replace with the real number when confirmed. -->
       <a class="btn btn-primary" href="tel:+447920635771">07920 635771</a>
 
     </div>
   </header>
 
 
-  <!-- ==========================================================================
-       PAGE CONTENT — this is the part you write.
-       id="main" is the target of the skip link above.
-       ========================================================================== -->
   <main id="main">
 
-<section class="section ">
-  <div class="container">
+    <!-- ========================================================================
+         INTRO — heading, one-line summary, and jump links to each service
+         section below.
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
 
-    <div class="section-header">
-      <h1>Mortgage and protection services</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perspiciatis a? Similique, quisquam eligendi inventore est culpa magni, sunt aliquid delectus cum reiciendis, nostrum beatae nemo sequi omnis ducimus dolore.</p>
-    </div>
+        <div class="section-header">
+          <p class="eyebrow">What I can help with</p>
+          <h1>Mortgage and protection services</h1>
+          <p>Whole-of-market advice across residential and commercial lending, plus the protection cover that sits alongside it. Every recommendation is researched across the whole market rather than a restricted panel.</p>
+        </div>
 
-    <nav aria-label="Services on this page">
-      <ul class="pill-list">
-        <li><a href="#first-time-buyers">First-time buyers</a></li>
-        <li><a href="#remortgaging">Remortgaging</a></li>
-        <li><a href="#buy-to-let">Buy-to-let</a></li>
-        <li><a href="#commercial">Commercial lending</a></li>
-        <li><a href="#equity-release">Equity release</a></li>
-        <li><a href="#protection">Protection</a></li>
-      </ul>
-    </nav>
+        <nav aria-label="Services on this page">
+          <ul class="pill-list">
+            <li><a href="#first-time-buyers">First-time buyers</a></li>
+            <li><a href="#remortgaging">Remortgaging</a></li>
+            <li><a href="#buy-to-let">Buy-to-let</a></li>
+            <li><a href="#commercial">Commercial lending</a></li>
+            <li><a href="#equity-release">Equity release</a></li>
+            <li><a href="#protection">Protection</a></li>
+          </ul>
+        </nav>
 
-  </div>
-</section>
+      </div>
+    </section>
 
 
     <section class="section service-section" id="first-time-buyers">
       <div class="container">
-    <h2>First-time buyers</h2>
-    <div class = "prose">
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit</p>
-    </div>
-        <!-- content goes here -->
-
+        <h2>First-time buyers</h2>
+        <hr class="rule-accent">
+        <div class="prose">
+          <p>Working out what you can borrow, what deposit you need, and which lenders will consider your situation. Sam looks at your income, outgoings and circumstances to identify the range of options realistically available before comparing products across the whole market.</p>
+          <p>This includes explaining schemes such as guarantor and family-assisted mortgages, and what a Decision in Principle is used for.</p>
+        </div>
       </div>
     </section>
+
     <section class="section service-section" id="remortgaging">
       <div class="container">
-    <h2>Remortgaging</h2>
-    <div class = "prose">
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit</p>
-    </div>
-        <!-- content goes here -->
-
+        <h2>Remortgaging</h2>
+        <hr class="rule-accent">
+        <div class="prose">
+          <p>Reviewing your current deal before it ends, and comparing a product transfer from your existing lender against moving to a new one. Timing matters here — Sam can flag when it's worth starting the conversation, usually a few months before your current deal expires.</p>
+          <p>Sam checks whether your circumstances have changed since you last borrowed, and what that means for the options available to you now.</p>
+        </div>
       </div>
     </section>
+
     <section class="section service-section" id="buy-to-let">
       <div class="container">
-    <h2>Buy-to-let</h2>
-    <div class = "prose">
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit</p>
-    </div>
-        <!-- content goes here -->
-
+        <h2>Buy-to-let</h2>
+        <hr class="rule-accent">
+        <div class="prose">
+          <p>Advice for landlords, including portfolio lending and limited company structures. This covers individual landlords letting a single property as well as those building a wider portfolio.</p>
+          <p>Specialist lenders assess buy-to-let applications differently from a residential mortgage, usually against the property's likely rental income rather than your personal salary alone.</p>
+        </div>
       </div>
     </section>
+
     <section class="section service-section" id="commercial">
       <div class="container">
-    <h2>Commercial lending</h2>
-    <div class = "prose">
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit</p>
-    </div>
-        <!-- content goes here -->
-
+        <h2>Commercial lending</h2>
+        <hr class="rule-accent">
+        <div class="prose">
+          <p>Finance for business premises and commercial investment property. This includes owner-occupied premises, commercial investment purchases, and further advances against existing commercial assets.</p>
+          <p>Commercial lending is assessed on a more individual basis than residential mortgages, so early conversation with a lender is usually worthwhile.</p>
+        </div>
       </div>
     </section>
+
     <section class="section service-section" id="equity-release">
       <div class="container">
-    <h2>Equity Release</h2>
-    <div class = "prose">
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit</p>
-    </div>
-        <!-- content goes here -->
-
+        <h2>Equity release</h2>
+        <hr class="rule-accent">
+        <div class="prose">
+          <p>Later-life lending options that let you access value tied up in your home without moving. Sam sets out how each product works, what it costs over the life of the plan, and how it can affect the value of your estate and any means-tested benefits.</p>
+          <p>Equity release is a significant, often irreversible decision. Alternatives are always discussed alongside it, so you have the full picture before deciding anything.</p>
+        </div>
       </div>
     </section>
+
     <section class="section service-section" id="protection">
       <div class="container">
         <h2>Protection</h2>
-        <div class = "prose">
-          <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo perspiciatis laboriosam unde qui facere velit expedita, a maiores? Nihil enim quidem suscipit iusto, iste amet id accusamus quasi hic reprehenderit</p>
+        <hr class="rule-accent">
+        <div class="prose">
+          <p>Life cover, critical illness and income protection to sit alongside your mortgage. This covers protecting the mortgage itself, as well as wider family income needs if you were unable to work.</p>
+          <p>Cover can be arranged at the same time as a mortgage application or reviewed separately at any point.</p>
         </div>
-        <!-- content goes here -->
-
       </div>
     </section>
+
     <section class="cta-band">
       <div class="container">
         <h2>Ready to talk it through?</h2>
@@ -175,10 +151,8 @@
 
 
   <!-- ==========================================================================
-       SITE FOOTER — identical on every page. Do not edit.
-
-       The regulatory text below is PLACEHOLDER wording. Flexi Network have
-       to supply the exact required text before this site goes live.
+       SITE FOOTER — identical on every page. Regulatory wording is placeholder
+       until Flexi Network confirm it.
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -246,7 +220,6 @@
     </div>
   </footer>
 
-  <!-- Scroll reveal animation. Loaded last so it doesn't block rendering. -->
   <script src="js/reveal.js"></script>
 
 </body>

@@ -1,59 +1,31 @@
 <!DOCTYPE html>
-<!--
-  ============================================================================
-  PAGE TEMPLATE — copy this file to start a new page.
-
-  HOW TO USE:
-    1. Copy this file and rename it (about.html, services.html, etc.)
-    2. Change the <title> and <meta name="description">
-    3. Change the css/PAGENAME.css link to match your page
-    4. Add aria-current="page" to your page's link in the nav
-    5. Write your content inside <main>
-
-  DO NOT change the header or footer markup. They are the same on every
-  page — if they need changing, tell Sen so it gets changed everywhere at
-  once.
-  ============================================================================
--->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CHANGE THIS. Shows in the browser tab and as the headline in Google
-       results. Format: Page name | Business name -->
-  <title>About | Cambridge Mortgage Bureau</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+  <title>About | Cambridge Mortgage Bureau</title>
+  <meta name="description" content="Sam Makalandawa has twenty years' experience in financial services. Whole-of-market mortgage and equity release advice from Cambridge, serving clients across the UK.">
 
-  <!-- CHANGE THIS. The grey summary text under the link in Google results.
-       Aim for 140-155 characters. -->
-  <meta name="description" content="Whole-of-market mortgage and equity release advice from Cambridge, serving clients across the UK.">
-
-  <!-- Shared styles first, then page-specific styles. Order matters:
-       later rules win when specificity is equal, so your page CSS can
-       override the shared defaults if it needs to. -->
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/about.css">
 </head>
 
 <body>
 
-  <!-- Lets keyboard users jump past the nav. Hidden until focused. -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ==========================================================================
-       SITE HEADER — identical on every page. Do not edit.
+       SITE HEADER — identical on every page. Do not edit here; if it needs
+       changing it has to change in all six files at once.
        ========================================================================== -->
   <header class="site-header">
     <div class="container">
 
       <a class="site-logo" href="index.html">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
 
-      <!-- aria-label distinguishes this from the footer nav for screen
-           readers. Links are in a <ul> so screen readers announce how many
-           items there are before reading them. -->
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -63,105 +35,75 @@
         </ul>
       </nav>
 
-      <!-- tel: link makes the number tappable on mobile. Keep the href in
-           full international format (+44, no leading zero) and the visible
-           text in readable format.
-           TODO: replace with the real number when confirmed. -->
-      <a class="btn btn-primary" href="tel:+441234567890">07920 635771</a>
+      <!-- TODO: replace with the real number when confirmed. -->
+      <a class="btn btn-primary" href="tel:+447920635771">07920 635771</a>
 
     </div>
   </header>
 
 
-  <!-- ==========================================================================
-       PAGE CONTENT — this is the part you write.
-       id="main" is the target of the skip link above.
-       ========================================================================== -->
   <main id="main">
+
+    <!-- ========================================================================
+         BIO — photo beside text, matching the about teaser on the home page.
+         ======================================================================== -->
     <section class="section section-alt">
       <div class="container split">
+
         <div>
-          
-          <img src="sam-makalandawa-mortgage-adviser.jpg" alt="Sam Makalandawa, mortgage adviser">
+          <!-- TODO: replace with the real photo of Sam. -->
+          <img src="sam-makalandawa-mortgage-adviser.jpg" alt="Sam Makalandawa, mortgage and equity release adviser">
         </div>
 
         <div>
-          <h2>About Sam</h2>
-          <h3>Twenty years in financial services</h3>
-          <p>Sam has spent over two decades in financial services, working across development banking, auto finance and deposit mobilisation before specialising in mortgage and equity release advice. He is based in Cambridge and takes on clients across the UK.</p>
+          <p class="eyebrow">About</p>
+          <h1>Twenty years in financial services</h1>
+          <p>Sam has spent over two decades in financial services, working across development banking, auto finance and deposit mobilisation before specialising in mortgage and equity release advice.</p>
           <p>He is a whole-of-market adviser, meaning he can recommend products from across the lending market rather than a restricted panel. He holds the Certificate in Mortgage Advice and Practice (CeMAP) and the Certificate in Regulated Equity Release (CeRER), alongside an MBA from Edith Cowan University.</p>
-          <p>Sam advises on first-time buyer mortgages, remortgages and product transfers, buy-to-let and commercial lending, further advances, equity release, and protection cover.</p>
-          <p>A mortgage is usually the largest commitment a person takes on, and the process is more complicated than it needs to be. Sam's approach is to lay out the options plainly, be clear about what each one costs, and give clients enough information to make the decision themselves.</p>
+          <p>Sam advises on first-time buyer mortgages, remortgages and product transfers, buy-to-let and commercial lending, further advances, equity release, and protection cover. He is based in Cambridge and takes on clients across the UK.</p>
+
           <div class="qualifications-row">
-            <p class="eyebrow">qualifications</p>
-              <ul class="pill-list">
-                <li>CeMAP</li>
-                <li>CeRER</li> 
-                <li>MBA</li>
-                <li>Whole of market</li>
-              </ul>
-            </div>
+            <p class="eyebrow">Qualifications</p>
+            <ul class="pill-list">
+              <li>CeMAP</li>
+              <li>CeRER</li>
+              <li>MBA</li>
+              <li>Whole of market</li>
+            </ul>
           </div>
         </div>
-    </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>What clients say</h2>
-    </div>
-
-    <div class="card-grid">
-      <blockquote class="quote">
-        <p>"Sam explained every option in plain English and made the whole process feel far less stressful."</p>
-        <footer>Placeholder client review</footer>
-      </blockquote>
-
-      <blockquote class="quote">
-        <p>"Helpful, responsive and clear about the costs."</p>
-        <footer>Placeholder client review</footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-    <section class="section section-alt">
-      <div class="container">
-        <h2>What working with Sam looks like</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consequuntur sed numquam? Non nulla odio quas harum, ea sapiente eligendi rem labore consequatur natus error provident laborum iure repudiandae dignissimos perspiciatis odit pariatur quae placeat possimus nostrum distinctio perferendis veniam? Et dolore neque, porro necessitatibus velit numquam in! Ipsa molestias velit commodi, itaque eligendi tempora modi excepturi! Odio sint natus sit sapiente, recusandae repudiandae dolor veniam asperiores nihil nulla eum eveniet accusamus quasi at sed sequi repellendus quas a in officia corporis iusto ut! Officia saepe tempore pariatur ab, optio quod eius, tenetur consectetur eos voluptates facilis, temporibus placeat minima?</p>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <h2>Why he does this</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consequuntur sed numquam? Non nulla odio quas harum, ea sapiente eligendi rem labore consequatur natus error provident laborum iure repudiandae dignissimos perspiciatis odit pariatur quae placeat possimus nostrum distinctio perferendis veniam? Et dolore neque, porro necessitatibus velit numquam in! Ipsa molestias velit commodi, itaque eligendi tempora modi excepturi! Odio sint natus sit sapiente, recusandae repudiandae dolor veniam asperiores nihil nulla eum eveniet accusamus quasi at sed sequi repellendus quas a in officia corporis iusto ut! Officia saepe tempore pariatur ab, optio quod eius, tenetur consectetur eos voluptates facilis, temporibus placeat minima?</p>
-      </div>
-    </section>
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Who he works with</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consequuntur sed numquam? Non nulla odio quas harum, ea sapiente eligendi rem labore consequatur natus error provident laborum iure repudiandae dignissimos perspiciatis odit pariatur quae placeat possimus nostrum distinctio perferendis veniam? Et dolore neque, porro necessitatibus velit numquam in! Ipsa molestias velit commodi, itaque eligendi tempora modi excepturi! Odio sint natus sit sapiente, recusandae repudiandae dolor veniam asperiores nihil nulla eum eveniet accusamus quasi at sed sequi repellendus quas a in officia corporis iusto ut! Officia saepe tempore pariatur ab, optio quod eius, tenetur consectetur eos voluptates facilis, temporibus placeat minima?</p>
       </div>
     </section>
 
-    <section class="section section">
-      
+
+    <!-- ========================================================================
+         HOW SAM WORKS — three cards, same pattern as the home page services
+         summary so the two pages feel consistent.
+         ======================================================================== -->
+    <section class="section" id="how-sam-works">
       <div class="container">
-        <center><h2 id="sam-work">How Sam works</h2></center>
+
+        <div class="section-header">
+          <h2>How Sam works</h2>
+          <p>What to expect from working with an independent, whole-of-market adviser.</p>
+        </div>
+
         <ul class="card-grid">
 
-          <li class="card">
-            <h3>Whole of Market</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus eaque adipisci pariatur repellendus, dolor illum nihil. Facere dolorem, consequatur, enim obcaecati vero corporis sit facilis harum itaque officia, repellendus iste!</p>
+          <li class="reveal card">
+            <h3>Whole of market</h3>
+            <p>Sam is not tied to a panel of lenders. He can look across the whole market and compare products on their merits.</p>
           </li>
 
-          <li class="card">
+          <li class="reveal card">
             <h3>Plain English</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ab labore dolore nihil, illo odio velit iusto aliquid magni cupiditate aperiam qui ad quis eaque iste optio, laudantium consectetur dolor.</p>
+            <p>Mortgage and equity release terms can be confusing. Sam explains what each option means and what it costs, without jargon.</p>
           </li>
 
-          <li class="card">
+          <li class="reveal card">
             <h3>No pressure</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa porro quasi cupiditate placeat odio incidunt ab nisi. Architecto voluptatibus quas animi, corporis assumenda dignissimos, fugit doloribus odit nesciunt, ex accusantium.</p>
+            <p>The first conversation is about understanding your situation. You decide whether and when to move forward.</p>
           </li>
 
         </ul>
@@ -169,27 +111,92 @@
       </div>
     </section>
 
-    <section class="cta-band">
-    <div class="container">
-      <h2>Ready to talk it through?</h2>
-      <p>A first conversation costs nothing and there's no obligation.</p>
-      <div class="btn-group">
-        <a class="btn btn-primary" href="contact.html">Book a free chat</a>
+
+    <!-- ========================================================================
+         PROCESS — the four-step overview of what happens after first contact.
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>What happens after you get in touch</h2>
+          <p>A first conversation is free and there is no obligation to proceed.</p>
+        </div>
+
+        <ol class="process">
+
+          <li>
+            <h3>Introductory call</h3>
+            <p>A short call to understand what you're trying to do and answer any initial questions.</p>
+          </li>
+
+          <li>
+            <h3>Fact find</h3>
+            <p>Sam gathers the detail on your income, outgoings and circumstances needed to research the market properly.</p>
+          </li>
+
+          <li>
+            <h3>Recommendation</h3>
+            <p>You receive a written recommendation setting out the options considered and why.</p>
+          </li>
+
+          <li>
+            <h3>Application</h3>
+            <p>If you decide to proceed, Sam manages the application through to completion and keeps you updated.</p>
+          </li>
+
+        </ol>
+
       </div>
-    </div>
     </section>
 
 
-  
+    <!-- ========================================================================
+         TESTIMONIALS — placeholder until Sen confirms which reviews are
+         cleared for use. See COMPONENTS.md.
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>What clients say</h2>
+        </div>
+
+        <div class="card-grid">
+          <blockquote class="quote">
+            <p>"Sam explained every option in plain English and made the whole process feel far less stressful."</p>
+            <footer>Placeholder client review</footer>
+          </blockquote>
+
+          <blockquote class="quote">
+            <p>"Helpful, responsive and clear about the costs."</p>
+            <footer>Placeholder client review</footer>
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         CALL TO ACTION — one per page maximum.
+         ======================================================================== -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Ready to talk it through?</h2>
+        <p>A first conversation costs nothing and there is no obligation.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="contact.html">Book a free chat</a>
+        </div>
+      </div>
+    </section>
 
   </main>
 
 
   <!-- ==========================================================================
-       SITE FOOTER — identical on every page. Do not edit.
-
-       The regulatory text below is PLACEHOLDER wording. Flexi Network have
-       to supply the exact required text before this site goes live.
+       SITE FOOTER — identical on every page. Regulatory wording is placeholder
+       until Flexi Network confirm it.
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -231,7 +238,7 @@
 
       </div>
 
-<div class="footer-legal">
+      <div class="footer-legal">
 
         <p class="footer-warning">
           Your home may be repossessed if you do not keep up repayments on your mortgage.
@@ -253,11 +260,9 @@
         <p>&copy; 2026 Cambridge Mortgage Bureau Ltd.</p>
 
       </div>
-
     </div>
   </footer>
 
-  <!-- Scroll reveal animation. Loaded last so it doesn't block rendering. -->
   <script src="js/reveal.js"></script>
 
 </body>

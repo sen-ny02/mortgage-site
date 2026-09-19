@@ -1,59 +1,37 @@
 <!DOCTYPE html>
 <!--
-  ============================================================================
-  PAGE TEMPLATE — copy this file to start a new page.
-
-  HOW TO USE:
-    1. Copy this file and rename it (about.html, services.html, etc.)
-    2. Change the <title> and <meta name="description">
-    3. Change the css/PAGENAME.css link to match your page
-    4. Add aria-current="page" to your page's link in the nav
-    5. Write your content inside <main>
-
-  DO NOT change the header or footer markup. They are the same on every
-  page — if they need changing, tell Sen so it gets changed everywhere at
-  once.
-  ============================================================================
+  DRAFT — structure and placeholder wording only. This is not yet approved
+  legal text. Confirm with Marcel / Sen before launch, and update this list
+  if any analytics or marketing cookies are added later.
 -->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CHANGE THIS. Shows in the browser tab and as the headline in Google
-       results. Format: Page name | Business name -->
-  <title>Cookies | Cambridge Mortgage Bureau</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+  <title>Cookie policy | Cambridge Mortgage Bureau</title>
+  <meta name="description" content="What cookies Cambridge Mortgage Bureau uses on this website and how to control them.">
+  <meta name="robots" content="noindex">
 
-  <!-- CHANGE THIS. The grey summary text under the link in Google results.
-       Aim for 140-155 characters. -->
-  <meta name="description" content="Whole-of-market mortgage and equity release advice from Cambridge, serving clients across the UK.">
-
-  <!-- Shared styles first, then page-specific styles. Order matters:
-       later rules win when specificity is equal, so your page CSS can
-       override the shared defaults if it needs to. -->
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/cookies.css">
 </head>
 
 <body>
 
-  <!-- Lets keyboard users jump past the nav. Hidden until focused. -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ==========================================================================
-       SITE HEADER — identical on every page. Do not edit.
+       SITE HEADER — identical on every page. Do not edit here; if it needs
+       changing it has to change in all six files at once.
        ========================================================================== -->
   <header class="site-header">
     <div class="container">
 
       <a class="site-logo" href="index.html">Cambridge&nbsp;Mortgage <span>Bureau</span></a>
 
-      <!-- aria-label distinguishes this from the footer nav for screen
-           readers. Links are in a <ul> so screen readers announce how many
-           items there are before reading them. -->
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -63,27 +41,46 @@
         </ul>
       </nav>
 
-      <!-- tel: link makes the number tappable on mobile. Keep the href in
-           full international format (+44, no leading zero) and the visible
-           text in readable format.
-           TODO: replace with the real number when confirmed. -->
+      <!-- TODO: replace with the real number when confirmed. -->
       <a class="btn btn-primary" href="tel:+447920635771">07920 635771</a>
 
     </div>
   </header>
 
 
-  <!-- ==========================================================================
-       PAGE CONTENT — this is the part you write.
-       id="main" is the target of the skip link above.
-       ========================================================================== -->
   <main id="main">
 
     <section class="section">
       <div class="container">
-        <p class="eyebrow">Eyebrow label</p>
-        <h1>Page heading</h1>
-        <p>Your content goes here.</p>
+
+        <p class="eyebrow">Legal</p>
+        <h1>Cookie policy</h1>
+        <p class="prose-meta">Last updated: TODO — date of Flexi Network sign-off.</p>
+
+        <div class="prose">
+
+          <h2>What cookies are</h2>
+          <p>Cookies are small text files placed on your device when you visit a website. They're used to make sites work, remember your preferences, or measure how a site is used.</p>
+
+          <h2>Cookies used on this site</h2>
+          <p>This site currently uses only cookies that are strictly necessary for it to function:</p>
+          <ul>
+            <li><strong>Form submission (Netlify).</strong> When you submit the contact form, Netlify — the service that hosts this site and processes the form — may set a cookie to protect the submission against spam. No marketing or advertising cookies are set by this process.</li>
+          </ul>
+          <p>TODO: confirm the exact cookie name(s) Netlify sets, and update this section if analytics or any other tool is added.</p>
+          <p>We do not currently use analytics, advertising, or social media cookies.</p>
+
+          <h2>How to control cookies</h2>
+          <p>Because this site only uses strictly necessary cookies, no cookie consent banner is shown. Most browsers let you view, block, or delete cookies through their settings — see your browser's help pages for instructions. Blocking the necessary cookie described above may stop the contact form working correctly.</p>
+
+          <h2>Changes to this policy</h2>
+          <p>If the cookies used on this site change, this page will be updated to reflect that.</p>
+
+          <h2>Contact</h2>
+          <p>Questions about this policy can be sent to <a href="mailto:enquiries@cambridgemortgages.co.uk">enquiries@cambridgemortgages.co.uk</a>. See also our <a href="privacy.html">privacy policy</a>.</p>
+
+        </div>
+
       </div>
     </section>
 
@@ -91,10 +88,8 @@
 
 
   <!-- ==========================================================================
-       SITE FOOTER — identical on every page. Do not edit.
-
-       The regulatory text below is PLACEHOLDER wording. Flexi Network have
-       to supply the exact required text before this site goes live.
+       SITE FOOTER — identical on every page. Regulatory wording is placeholder
+       until Flexi Network confirm it.
        ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -162,7 +157,6 @@
     </div>
   </footer>
 
-  <!-- Scroll reveal animation. Loaded last so it doesn't block rendering. -->
   <script src="js/reveal.js"></script>
 
 </body>
